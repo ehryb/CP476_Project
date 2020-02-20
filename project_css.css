@@ -1,0 +1,99 @@
+html, body, header, footer, hgroup, nav, article, section, figure, figcaption, h1, h2, h3, ul, li, body, div, p, img
+{
+   margin: 0;
+   padding: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   border: 0;
+}
+
+
+body {
+   background-image: url('Images/Background-Image.png');
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   line-height: 1.428571429;
+   color: #333333;
+   background-repeat: repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   align-content: center;
+}
+
+
+
+
+#loginArea{
+
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+    border-width: thick;
+    border-radius: 15px;
+    border-color: orange;
+}
+
+h3{
+    font-size: 24px;
+    color: orange;
+    font-family: "Playfair Display"
+}
+
+h4{
+    height:5px;
+    text-underline-position: below;
+
+}
+#loginButton{
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#topElements{
+    width: 100%;
+    margin: auto;
+}
+
+#mainLogo{
+
+    padding-right: 500px;
+}
+
+#section2{
+    margin: auto;
+}
+
+#section2 ul{
+    display: inline-flex;
+    margin: auto;
+    background-color:black;
+    padding-top:0px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    text-align: right;
+    align-items: center;
+
+
+
+}
+
+#section2 ul li{
+    list-style: none;
+    margin: 20px;
+    color:grey;
+}
+
+#section2 ul li a{
+    display:block;
+    text-decoration: none;
+    color: grey;
+}
+
+
