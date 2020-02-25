@@ -125,6 +125,16 @@ h4{
     font-family:"Franklin Gothic";
 }
 
+
+#aboutInfo{
+    border-radius: 15px;
+    background-color: white;
+    margin:auto;
+    width: 500px;
+    padding-bottom: 10px;
+}
+
+
 /* create the footer */
 .footer {
     padding-top: 5px;
