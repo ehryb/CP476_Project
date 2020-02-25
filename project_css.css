@@ -65,9 +65,43 @@ h4{
 }
 
 #mainLogo{
-
-    padding-right: 500px;
 }
+
+#mainSection{
+    display: block;
+    text-align: center;
+}
+
+
+
+
+#mainbars{
+    display: block;
+    text-align: center;
+}
+
+#mainBars ul li a{
+    width: 100%;
+    background-color: black;
+    color: orange;
+    font-size: 36px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+
+}
+
+#mainBars ul li a:hover{
+    background-color: orange;
+    color: black;
+    font-size: 36px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+
 
 /* create the footer */
 .footer {
