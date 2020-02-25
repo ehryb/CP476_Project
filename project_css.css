@@ -146,7 +146,7 @@ h4{
 
 
 /* link for the nav bar (includes the changes from the header links) */
-input{
+.search_input{
     margin-top: 14px;
     margin-right: 12px;
     float: right;
