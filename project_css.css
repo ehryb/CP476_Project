@@ -154,9 +154,21 @@ h4{
     width: auto;
 }
 
+#title{
+    float: left;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+#title_image{
+    margin-top: 15px;
+    display: inline;
+}
+
+
 
 /* link for the nav bar (includes the changes from the header links) */
-.search_input{
+#search_input{
     margin-top: 14px;
     margin-right: 12px;
     float: right;
@@ -165,6 +177,10 @@ h4{
     font-size: 16px;
     border-radius: 5px;
     width: 300px;
+    background-image: url('Images/search_icon.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 30px 15px;
 
 }
 
