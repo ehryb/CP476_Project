@@ -55,13 +55,15 @@ h4{
 }
 
 #loginButton{
-  background-color: orange;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
+    border-radius: 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family:"Franklin Gothic";
 }
 
 #mainLogo{
@@ -100,18 +102,40 @@ h4{
 
 }
 
+#accountInfo{
+    border-radius: 15px;
+    background-color: white;
+    margin:auto;
+    width: 500px;
+    padding-bottom: 10px;
+}
 
+#accountImage{
+    width: 250px;
+    height:250px;
+    border-radius: 725px;
+}
 
+#changeButton{
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family:"Franklin Gothic";
+}
 
 /* create the footer */
 .footer {
     padding-top: 5px;
     padding-bottom: 5px;
-  background-color: #333;
-  text-align: center;
-  color: white;
-  font-size: 12px;
-
+    background-color: #333;
+    text-align: center;
+    color: white;
+    font-size: 12px;
 }
 
 
