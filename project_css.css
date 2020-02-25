@@ -56,10 +56,7 @@ h4{
   cursor: pointer;
 }
 
-#topElements{
-    width: 100%;
-    margin: auto;
-}
+
 
 #mainLogo{
 
@@ -68,32 +65,31 @@ h4{
 
 #section2{
     margin: auto;
+    width: 100%;
+
 }
 
 #section2 ul{
+
+    text-align: right;
+    width: 100%;
     display: inline-flex;
     margin: auto;
     background-color:black;
     padding-top:0px;
     padding-bottom: 0px;
     padding-right: 10px;
-    text-align: right;
-    align-items: center;
-
-
-
 }
 
-#section2 ul li{
+#section2 ul a{
+    float: right;
+    display:block;
+    text-decoration: none;
     list-style: none;
     margin: 20px;
     color:grey;
 }
 
-#section2 ul li a{
-    display:block;
-    text-decoration: none;
-    color: grey;
-}
+
 
 
