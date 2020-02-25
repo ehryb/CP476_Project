@@ -1,27 +1,34 @@
-html, body, header, footer, hgroup, nav, article, section, figure, figcaption, h1, h2, h3, ul, li, body, div, p, img
-{
-   margin: 0;
-   padding: 0;
-   font-size: 100%;
-   vertical-align: baseline;
-   border: 0;
-}
-
-
+/* set the background of the two pages */
 body {
-   background-image: url('Images/Background-Image.png');
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    font-size: 14px;
    line-height: 1.428571429;
    color: #333333;
-   background-repeat: repeat;
-   background-attachment: fixed;
-   background-size: cover;
-   align-content: center;
+    background-image: url('Images/Background-Image.png');
+    height: 100%;
 }
 
+/* wrapper around everything but the footer */
+.wrapper {
+    min-height: 100%;
+}
 
+/* top header for both pages */
+header {
+  overflow: hidden;
+  background-color: #333;
+  top: 0;
+}
 
+/* links in both the header and the nav bar */
+a{
+    float: right;
+    display: block;
+    color: lightgray;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
 
 #loginArea{
 
@@ -56,39 +63,22 @@ h4{
   cursor: pointer;
 }
 
-
-
 #mainLogo{
 
     padding-right: 500px;
 }
 
-#section2{
-    margin: auto;
-    width: 100%;
+/* create the footer */
+.footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  background-color: #333;
+  text-align: center;
+  color: white;
+  font-size: 12px;
 
 }
 
-#section2 ul{
-
-    text-align: right;
-    width: 100%;
-    display: inline-flex;
-    margin: auto;
-    background-color:black;
-    padding-top:0px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-}
-
-#section2 ul a{
-    float: right;
-    display:block;
-    text-decoration: none;
-    list-style: none;
-    margin: 20px;
-    color:grey;
-}
 
 
 
