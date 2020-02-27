@@ -38,6 +38,7 @@ input[type=text]{
 
 }
 
+
 #loginArea{
 
     margin: auto;
@@ -252,5 +253,56 @@ article{
 	 display: inline;
 
 }
+
+
+#ReviewBox{
+    padding-left: 50px;
+}
+
+table#critic_table{
+
+}
+
+#critic_table{
+    float: left;
+    width: 600px;
+    font-size: 16px;
+    padding-right: 30px;
+}
+
+#audience_table{
+    width: 600px;
+    font-size: 16px;
+    padding-right: 30px;
+
+}
+
+.new-lines{
+    padding-right:30px;
+    overflow: hidden;
+    display: inline-flex;
+    box-sizing: border-box;
+    width:100%;
+
+}
+
+
+#your_review{
+    padding-left: 50px;
+}
+
+#submitReview{
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family:"Franklin Gothic";
+}
+
+
 
 
