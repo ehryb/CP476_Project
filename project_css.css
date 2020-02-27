@@ -154,14 +154,8 @@ h4{
     width: auto;
 }
 
-#title{
-    float: left;
-    margin-bottom: 10px;
-    font-size: 50px;
-}
-
 #title_image{
-    margin-top: 15px;
+    margin-top: 20px;
     display: inline;
 }
 
@@ -186,8 +180,10 @@ h4{
 
 /* heading 1 */
 h1{
+   float: left;
     margin-bottom: 10px;
-    font-size: 50px;
+    margin-top: 20px;
+    font-size: 60px;
 
 }
 
@@ -211,6 +207,31 @@ article{
     width: auto;
 }
 
+#movie_title {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 50px;
+}
 
+/* sets the container */
+#container {
+	font-size: 14px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+/* sets the image to the far most left */
+ #container__image {
+	 float: left;
+     padding-right: 30px;
+
+}
+
+/* sets the image inline with the image */
+ #container__rest {
+	 display: inline;
+
+}
 
 
