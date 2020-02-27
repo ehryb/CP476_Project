@@ -50,6 +50,9 @@ input[type=text]{
     border-color: orange;
     padding-bottom: 10px;
 }
+table{
+    margin-top: 20px;
+}
 
 h3{
     font-size: 34px;
@@ -156,7 +159,7 @@ h4{
 .title {
     overflow: hidden;
     padding-top: 10px;
-    padding-left: 30px;
+    padding-left: 50px;
     display: block;
     box-sizing: border-box;
     width: auto;
@@ -211,8 +214,8 @@ h1{
 article{
     background-color: white;
     overflow: hidden;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -225,12 +228,14 @@ article{
     display: block;
     box-sizing: border-box;
     width: auto;
+
 }
 
 #movie_title {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top: 5px;
     font-size: 50px;
+
 }
 
 /* sets the container */
@@ -251,9 +256,62 @@ article{
 /* sets the image inline with the image */
  #container__rest {
 	 display: inline;
+}
+
+table{
+    padding-left: 60px;
+}
+
+#scores{
+    margin-top: 5px;
+}
+
+th{
+    padding-right: 50px;
+}
+
+.new-lines{
+    padding-right: 30px;
+    overflow: hidden;
+    display: inline-flex;
+    box-sizing: border-box;
+    width: 100%;
 
 }
 
+/* the details container for listing the facts about the painting */
+.Details{
+    padding-top: 5px;
+    font-size: 16px
+    }
+
+/* the left list */
+.Details1{
+   float: left;
+
+}
+
+/* the padding around the left list */
+.Details1 ul{
+    padding-bottom: 8px;
+    padding-right: 20px;
+    margin-left: -40px;
+}
+
+.Details1 ul li{
+    padding-bottom: 10px;
+}
+
+/* the padding around the right list */
+.Details2 ul{
+    padding-top: 5px;
+    padding-bottom: 8px;
+
+}
+
+.Details2 ul li{
+    padding-bottom: 45px;
+}
 
 #ReviewBox{
     padding-left: 50px;
