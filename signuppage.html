@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="JS/project1.js"></script>
+
 </head>
-<body>
+<body >
 
 <div class="wrapper">
     <header>
@@ -17,6 +19,7 @@
     <div id = "loginArea">
         <h3> ReviewMaster Sign Up </h3>
 
+        <form action="homepage.html" method="GET" id ="submit-this" action = "#">
 
         <h4>First Name: </h4>
         <input id= "firstname" type ="text" name="firstname">
@@ -24,20 +27,28 @@
         <h4>Last Name: </h4>
         <input id= "lastname" type ="text" name="lastname">
 
+        <h4>User Name: </h4>
+        <input id= "username" type ="text" name="username">
+
+
+
         <h4>Email: </h4>
         <input id= "email" type ="text" name="email">
 
         <h4>Password: </h4>
-        <input id= "signuppassword" type ="text" name="signuppassword">
+        <input id= "signuppassword" type ="password" name="signuppassword">
 
         <h4>Confirm Password: </h4>
-        <input id= "signupconfirm" type ="text" name="signupconfirm">
+        <input id= "signupconfirm" type ="password" name="signupconfirm">
 
         <h4></h4>
 
-        <button type="submit" id = "signUpButton" value="Submit" onclick = "window.location.href='/homepage.html'">
+
+
+        <button type="submit" id = "signUpButton" value="submit" onclick="final_check()">
             Sign Up!
         </button>
+        </form>
 
     </div>
 
