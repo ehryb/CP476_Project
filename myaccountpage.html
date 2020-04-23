@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="JS/errorChecking.js"></script>
 </head>
 <body>
 
@@ -30,31 +31,33 @@
         <h3> My Account </h3>
         <img id = "accountImage" src = "Images/AccountImage.jpg" alt="Logo" height = "200px">
 
-        <h4>User Name: </h4> User Name HERE
+        <form action="homepage.html" method="GET" id ="change-this" action = "#">
+            <h4>User Name: </h4> User Name HERE
 
-        <h4>New User Name: </h4>
-        <input id= "newusername" type ="text" name="newusername">
+            <h4>New User Name: </h4>
+            <input id= "newusername" type ="text" name="newusername">
 
-        <h4>Password: </h4> Old password Here (*******)
+            <h4>Password: </h4> Old password Here (*******)
 
-        <h4>New Password: </h4>
-        <input id= "newpassword" type ="text" name="newpassword">
+            <h4>New Password: </h4>
+            <input id= "newpassword" type ="password" name="newpassword">
 
-        <h4>Confirm Password: </h4>
-        <input id= "confirmpassword" type ="text" name="confirmpassword">
+            <h4>Confirm Password: </h4>
+            <input id= "confirmpassword" type ="password" name="confirmpassword">
 
 
-        <h4>Email: </h4>
-        user.name@gmail.com
+            <h4>Email: </h4>
+            user.name@gmail.com
 
-        <h4>New Email: </h4>
-        <input id= "newemail" type ="text" name="newemail">
+            <h4>New Email: </h4>
+            <input id= "newemail" type ="text" name="newemail">
 
-        <h4></h4>
+            <h4></h4>
 
-        <button type="submit" id = "changeButton" value="Submit">
-            Submit Changes
-        </button>
+            <button type="submit" id = "changeButton" value="Submit" onclick="edit_AccountCheck()">
+                Submit Changes
+            </button>
+        </form>
 
 
     </div>

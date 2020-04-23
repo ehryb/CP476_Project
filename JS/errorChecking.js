@@ -1,12 +1,16 @@
 function add_listener(){
     var submitThis = document.querySelector("#submit-this");
+    var changeThis = document.querySelector("#change-this");
 
     submitThis.addEventListener("submit", function(event) {
         //event.preventDefault();
         final_check(event);
     });
 
-
+     changeThis.addEventListener("submit", function(event) {
+        //event.preventDefault();
+        edit_AccountCheck(event);
+    });
 
 }
 
@@ -123,5 +127,80 @@ function final_check(){
 
 
 
+}
+
+function edit_AccountCheck(){
+    var submitOk = 'true';
+
+    var newUser = document.getElementById("newusername");
+    var newPass = document.getElementById("newpassword");
+    var confirmPass = document.getElementById("confirmpassword");
+    var newEmail = document.getElementById("newemail");
+
+    // if newUser is not empty
+    if (newUser.value.length > 0){
+        //if not empty but not the correct length
+        if (newUser.value.length < 6){
+            newUser.style.backgroundColor = "pink";
+            newUser.style.borderColor = "red";
+            newUser.value = "";
+            newUser.placeholder = "Must contain at least 6 chars. (int & str)";
+            submitOk = 'false';
+        }
+        else{
+            if (/^(?=.*[a-zA-Z0-9]).{6,20}$/.test(newUser.value) == false){
+                newUser.style.backgroundColor = "pink";
+                newUser.style.borderColor = "red";
+                newUser.value = "";
+                newUser.placeholder = "Must contain one int and one str.";
+                submitOk = 'false';
+            }
+        }
+    }
+
+    // if new password has been added
+    if (newPass.value.length > 0){
+        if (newPass.value.length < 6) {
+            newPass.style.backgroundColor = "pink";
+            newPass.style.borderColor = "red";
+            newPass.value = "";
+            newPass.placeholder = "Must contain 6-20 chars. (int & str)";
+            submitOk = 'false';
+        }
+        else{
+            if (/^(?=.*[a-zA-Z0-9]).{6,20}$/.test(newPass.value) == false){
+                newPass.style.backgroundColor = "pink";
+                newPass.style.borderColor = "red";
+                newPass.value = "";
+                newPass.placeholder = "Must contain one int and one str.";
+                submitOk = 'false';
+            }
+        }
+
+    }
+
+    if (newPass.value.length > 0 && (confirmPass.value != newPass.value)){
+        confirmPass.style.backgroundColor = "pink";
+        confirmPass.style.borderColor = "red";
+        confirmPass.value = "";
+        confirmPass.placeholder = "Does not match password";
+        submitOk = 'false';
+    }
+
+    if (newEmail.value.length > 0){
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail.value) == false){
+            newEmail.style.backgroundColor = "pink";
+            newEmail.style.borderColor = "red";
+            newEmail.value = "";
+            newEmail.placeholder = "Must be in format aaa@aaa.aaa";
+            submitOk = 'false';
+        }
+    }
+
+
+    if (submitOk == 'false'){
+        event.preventDefault();
+        return;
+    }
 }
 
