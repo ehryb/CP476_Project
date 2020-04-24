@@ -9,17 +9,17 @@ body {
 }
 
 input[type=text]{
-    width: 220px;
-    border-radius: 4px;
+    width: 20em;
+    border-radius: .3em;
     border-color: orange;
-    border-width: 2px;
+    border-width: .2em;
 
 }
 input[type=password]{
-    width: 220px;
-    border-radius: 4px;
+    width: 20em;
+    border-radius: .3em;
     border-color: orange;
-    border-width: 2px;
+    border-width: .2em;
 
 }
 
@@ -27,13 +27,13 @@ input[type=password]{
 #loginArea{
 
     margin: auto;
-    width: 500px;
+    width: 50em;
     background-color: white;
     text-align: center;
     border-width: thick;
-    border-radius: 15px;
+    border-radius: 1em;
     border-color: orange;
-    padding-bottom: 10px;
+    padding-bottom: 1em;
 }
 table{
     margin-top: 20px;
@@ -112,22 +112,22 @@ a{
 #changeButton{
     background-color: orange;
     border: none;
-    border-radius: 10px;
+    border-radius: .5em;
     color: white;
-    padding: 16px 32px;
+    padding: 1em 1em;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: .5em .3em;
     cursor: pointer;
     font-family:"Franklin Gothic";
 }
 
 
 #aboutInfo{
-    border-radius: 15px;
+    border-radius: .5em;
     background-color: white;
     margin:auto;
     width: 500px;
-    padding-bottom: 10px;
+    padding-bottom: 1em;
 }
 
 .title {
@@ -158,18 +158,18 @@ a{
     background-image: url('Images/search_icon.png');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 30px 15px;
+    background-size: 2em 1em;
 
 }
 
 #signUpButton{
-    border-radius: 10px;
+    border-radius: .5em;
     background-color: orange;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 1em 1em;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: .5em .3em;
     cursor: pointer;
     font-family:"Franklin Gothic";
 }
@@ -233,40 +233,6 @@ th{
     box-sizing: border-box;
     width: 100%;
 
-}
-
-/* the details container for listing the facts about the painting */
-.Details{
-    padding-top: 5px;
-    font-size: 16px
-    }
-
-/* the left list */
-.Details1{
-   float: left;
-
-}
-
-/* the padding around the left list */
-.Details1 ul{
-    padding-bottom: 8px;
-    padding-right: 20px;
-    margin-left: -40px;
-}
-
-.Details1 ul li{
-    padding-bottom: 10px;
-}
-
-/* the padding around the right list */
-.Details2 ul{
-    padding-top: 5px;
-    padding-bottom: 8px;
-
-}
-
-.Details2 ul li{
-    padding-bottom: 45px;
 }
 
 #ReviewBox{
