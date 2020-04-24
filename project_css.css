@@ -8,28 +8,6 @@ body {
    height: 100%;
 }
 
-/* wrapper around everything but the footer */
-.wrapper {
-    min-height: 100%;
-}
-
-/* top header for both pages */
-header {
-  overflow: hidden;
-  background-color: #333;
-  top: 0;
-}
-
-/* links in both the header and the nav bar */
-a{
-    float: right;
-    display: block;
-    color: orange;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 16px;
-}
 input[type=text]{
     width: 220px;
     border-radius: 4px;
@@ -84,17 +62,23 @@ h4{
     font-family:"Franklin Gothic";
 }
 
-#mainLogo{
+ul{
+    margin-block-start: 0em;
+    padding-inline-start: 0em;
 }
 
-#mainSection{
+/* links in both the header and the nav bar */
+a{
+    float: right;
     display: block;
+    color: orange;
     text-align: center;
-}
-
-#mainbars{
-    display: block;
-    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 #mainBars ul li a{
@@ -102,9 +86,7 @@ h4{
     background-color: black;
     color: orange;
     font-size: 36px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-radius: 15px;
+    border-radius: .5em;
 
 }
 
@@ -112,8 +94,6 @@ h4{
     background-color: orange;
     color: black;
     font-size: 36px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
 
 }
 
@@ -181,14 +161,13 @@ h4{
 
 /* link for the nav bar (includes the changes from the header links) */
 #search_input{
-    margin-top: 14px;
-    margin-right: 12px;
+    margin-right: 1em;
     float: right;
     display: block;
     color: gray;
     font-size: 16px;
-    border-radius: 5px;
-    width: 300px;
+    border-radius: .5em;
+    width: 16em;
     background-image: url('Images/search_icon.png');
     background-repeat: no-repeat;
     background-position: right;
@@ -211,8 +190,8 @@ h4{
 /* heading 1 */
 h1{
    float: left;
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-bottom: .4em;
+    margin-top: .4em;
     font-size: 60px;
 
 }

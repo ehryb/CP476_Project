@@ -4,39 +4,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link href="project_css.css" rel="stylesheet">
+
 </head>
-<body>
+<body style = "margin: 0em;">
 
-<div class="wrapper">
-    <header>
-        <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50px">
-            <a href="mainpage.html">Log Out</a>
+<div class="container-fluid pt-3 h-100" style="background-image: url('Images/gray-textured.jpg');" >
 
-        <a href="aboutuspage.html">About Us</a>
+
+<nav class="navbar navbar-dark bg-dark">
+    <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
+    <div class="d-flex justify-content-end">
+        <a class="pr-3" href="mainpage.html">Log Out</a>
+        <a class="pr-3" href="aboutuspage.html">About Us</a>
         <a href="myaccountpage.html">My Account</a>
-    </header>
+    </div>
 
-</div>
-
-
-
-<div id = "mainSection">
-    <img id = "mainPic" src = "Images/Logo.png" alt="Logo" height = "100px">
+</nav>
 
 
 
+<nav class= "navbar" style="background-color: transparent;">
+    <img class = "img-fluid mx-auto" id = "mainPic" style="max-height: 20em;" src = "Images/Logo.png" alt="Logo" >
+</nav>
 
-</div>
 
-
-<div id = "mainBars">
-    <ul style="list-style-type:none">
-        <li><a href = "moviepage.html">Movies</a></li>
-        <li><a href = "musicpage.html">Music</a></li>
-        <li><a href = "artpage.html">Art </a></li>
-        <li><a href = "restaurantpage.html">Restaurants</a></li>
-        <li><a href = "techpage.html">Tech</a></li>
+<div id ="mainBars" class="card" style="background-color: transparent;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item row d-flex" style="background-color: transparent;">
+            <a href = "moviepage.html">Movies</a></li>
+        <li class="list-group-item row d-flex" style="background-color: transparent;">
+            <a href = "musicpage.html">Music</a></li>
+        <li class="list-group-item row d-flex" style="background-color: transparent;">
+            <a href = "artpage.html">Art </a></li>
+        <li class="list-group-item row d-flex" style="background-color: transparent;">
+            <a href = "restaurantpage.html">Restaurants</a></li>
+        <li class="list-group-item row d-flex" style="background-color: transparent;">
+            <a href = "techpage.html">Tech</a></li>
     </ul>
 </div>
 
@@ -44,7 +51,7 @@
 
 <div style = "padding-top: 20px"></div>
 
-
+    </div>
 </body>
 
 
