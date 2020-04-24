@@ -131,17 +131,6 @@ a{
     padding-bottom: 10px;
 }
 
-
-/* create the footer */
-.footer {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #333;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-}
-
 .title {
     overflow: hidden;
     padding-top: 2em;

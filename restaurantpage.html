@@ -4,35 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant_Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
 
 </head>
 <body>
-
-
-
-<div class="wrapper">
-    <header>
-        <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50px">
-
-        <a href="#">Log Out</a>
-        <a href="aboutuspage.html">About Us</a>
-        <a href="myaccountpage.html">My Account</a>
+<div class="container-fluid pt-3 h-100">
+    <nav class="navbar navbar-dark bg-dark">
+    <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
+    <div class="d-flex justify-content-end">
+        <a class="pr-3"href="mainpage.html">Log Out</a>
+        <a class="pr-3" href="aboutuspage.html">About Us</a>
+        <a class="pr-3" href="myaccountpage.html">My Account</a>
         <a href="homepage.html">Home</a>
         <input id="search_input" type="text" name="first_name" placeholder="Search Restaurants..."/>
-    </header>
+    </div>
+
+</nav>
 
     <div class="title">
         <h1>Restaurant Reviews</h1>
-        <img id = "title_image" src = "Images/food.png" alt="Logo" height = "80px">
+        <img id = "title_image" src = "Images/food.png" alt="Logo" height = "90em">
     </div>
 
-     <div style= "padding-top: 20px"> </div>
+
 
     <article>
-        <div id = "container">
-        <img id="container__image" src="images/restaurant_image.jpg" alt="Italian Trulli" height="600px" width="400px">
-            <div id= "container__rest">
+        <div class="main-contents">
+            <div class="clearfix">
+                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/restaurant_image.jpg" alt="Italian Trulli">
                 <p id = "movie_title">Restaurant Name Here</p>
                 <table>
                     <tr>
@@ -49,43 +49,40 @@
                     </tr>
                 </table>
 
-                <h4>Overview</h4>
+                <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
-                <p>This part will contian a description of the restaurant. It will not be more than 4 to 5 sentences and will give the user a small overview of the restaurant atmosphere, the current owner, possibly the history, etc.
+                <p>This part will contain a description of the restaurant. It will not be more than 4 to 5 sentences and will give the user a small overview of the location, the atmosphere of the restaurant and the name of the chef(s) if provided
                 </p>
 
-                <div class = "Details">
-                <div class = "Details1">
-                    <ul style="list-style-type:none">
-                        <li><h4 style="margin-top: 0px;">Year Opened:</h4></li>
-                        <li><h4>Location:</h4></li>
-                        <li><h4>Type of Cusine:</h4></li>
-                    </ul>
-                </div>
-                <div class = "Details2">
-                    <ul style="list-style-type:none">
-                        <li>Year</li>
-                        <li>Location of the Restaurant</li>
-                        <li>Type of Cusine</li>
+                <div class="card border border-0">
+                    <ul class="list-group list-group-flush border border-0">
+                         <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Year Established: </div>
+                            <div class="col-8">Year</div>
+                        </li>
+                        <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Location: </div>
+                            <div class="col-8">Location</div>
+                        </li>
+                         <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Cusine Type: </div>
+                            <div class="col-8">Type of Cusine</div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
             </div>
-        </div>
-        <div class = "container">
+
+        <div class="different-lines">
             <div class = "new-lines">
 
             </div>
         </div>
 
 
-
-
         <div id = "container2">
         <div class = "new-lines">
-
-
-
 
 
         <div id = "ReviewBox">
@@ -98,7 +95,7 @@
                     <td> LA Times: Great food, better atmosphere </td>
                 </tr>
                 <tr>
-                    <td> New York Times: Something for everyone</td>
+                    <td> New York Times: Something for everyone </td>
                 </tr>
 
 
@@ -111,12 +108,12 @@
                 </tr>
 
                 <tr>
-                    <td> User 1: Not worth the hype </td>
+                    <td> User 1: Not worth the hype</td>
                 </tr>
 
 
                 <tr>
-                    <td> User 2: Excellent! Went here for my anniversary... </td>
+                    <td>User 2: Excellent! Went here for my anniversary...</td>
                 </tr>
             </table>
 
@@ -132,11 +129,7 @@
         <div id = "container3">
             <div class = "new-lines">
 
-
-
-
-
-                <div id = "your_review">
+                <div class="pt-3 pl-5">
                     <h3>Add Review </h3>
 
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
@@ -160,6 +153,5 @@
 
 
 </div>
-
     </body>
 </html>
