@@ -5,54 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link href="project_css.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script type="text/javascript" src="JS/errorChecking.js"></script>
 </head>
 <body>
 
-<div class="wrapper">
-    <header>
-        <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50px">
-        <a href="mainpage.html">Log Out</a>
+<div class="container-fluid pt-3 h-100">
+    <nav class="navbar navbar-dark bg-dark">
+    <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
+    <div class="d-flex justify-content-end">
+        <a class="pr-3" style="color: orange" href="mainpage.html">Log Out</a>
+        <a class="pr-3" style="color: orange" href="aboutuspage.html">About Us</a>
+        <a style="color: orange" href="homepage.html">Home</a>
+    </div>
 
-        <a href="aboutuspage.html">About Us</a>
-        <a href="homepage.html">Home</a>
-    </header>
+    </nav>
 
-</div>
-
-
-
-<div id = "mainSection">
-<!--    <img id = "mainPic" src = "Images/Logo.png" alt="Logo" height = "100px">-->
+    <div class="pt-5"> </div>
 
 
-    <div id = "accountInfo">
+        <!--    <img id = "mainPic" src = "Images/Logo.png" alt="Logo" height = "100px">-->
+
+
+        <div class = "mx-auto" id = "accountInfo" align="center">
+
 
         <h3> My Account </h3>
-        <img id = "accountImage" src = "Images/AccountImage.jpg" alt="Logo" height = "200px">
+        <img id = "accountImage" src = "Images/AccountImage.jpg" alt="Logo">
 
         <form action="homepage.html" method="GET" id ="change-this" action = "#">
             <h4>User Name: </h4> User Name HERE
 
-            <h4>New User Name: </h4>
+            <h4 class="pt-2">New User Name: </h4>
             <input id= "newusername" type ="text" name="newusername">
 
-            <h4>Password: </h4> Old password Here (*******)
+            <h4 class="pt-2">Password: </h4> Old password Here (*******)
 
-            <h4>New Password: </h4>
+            <h4 class="pt-2">New Password: </h4>
             <input id= "newpassword" type ="password" name="newpassword">
 
-            <h4>Confirm Password: </h4>
+            <h4 class="pt-2">Confirm Password: </h4>
             <input id= "confirmpassword" type ="password" name="confirmpassword">
 
 
-            <h4>Email: </h4>
+            <h4 class="pt-2">Email: </h4>
             user.name@gmail.com
 
-            <h4>New Email: </h4>
+            <h4 class="pt-2">New Email: </h4>
             <input id= "newemail" type ="text" name="newemail">
 
-            <h4></h4>
+            <div class="pt-2"></div>
 
             <button type="submit" id = "changeButton" value="Submit" onclick="edit_AccountCheck()">
                 Submit Changes
@@ -65,12 +67,7 @@
 
 </div>
 
-
-
-
-
-
-<div style = "padding-top: 20px"></div>
+<div class = "pt-3"></div>
 
 
 </body>

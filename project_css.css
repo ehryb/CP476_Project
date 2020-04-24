@@ -97,16 +97,15 @@ a{
 }
 
 #accountInfo{
-    border-radius: 15px;
+    border-radius: .5em;
     background-color: white;
-    margin:auto;
-    width: 500px;
-    padding-bottom: 10px;
+    width: 50em;
+    padding-bottom: 2em;
 }
 
 #accountImage{
-    width: 250px;
-    height:250px;
+    width: 10em;
+    height:10em;
     border-radius: 725px;
 }
 
