@@ -30,12 +30,12 @@
         <img id = "title_image" src = "Images/popcorn.png" alt="Logo" height = "80px">
     </div>
 
-     <div style= "padding-top: 20px"> </div>
+
 
     <article>
-        <div id = "container">
-        <img id="container__image" src="images/ET-Movie-Poster.jpg" alt="Italian Trulli" height="600px" width="400px">
-            <div id= "container__rest">
+        <div class="main-contents">
+            <div class="clearfix">
+                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/ET-Movie-Poster.jpg" alt="Italian Trulli">
                 <p id = "movie_title">Movie Name Here</p>
                 <table>
                     <tr>
@@ -52,30 +52,32 @@
                     </tr>
                 </table>
 
-                <h4>Overview</h4>
+                <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
                 <p>This part will contain a description of the moive. It will not be more than 4 to 5 sentences and will give the user a small overview of the movie, as well as the movie genre, ie Comedy, Horror, Romance, Action, ect.
                 </p>
 
-                <div class = "Details">
-                <div class = "Details1">
-                    <ul style="list-style-type:none">
-                        <li><h4 style="margin-top: 0px;">Year Released:</h4></li>
-                        <li><h4>Director:</h4></li>
-                        <li><h4>Cast:</h4></li>
-                    </ul>
-                </div>
-                <div class = "Details2">
-                    <ul style="list-style-type:none">
-                        <li>Year</li>
-                        <li>Name of Director</li>
-                        <li>Dee Wallace, Henry Thomas, Peter Coyote, Drew Barrymore, Robert MacNaughton</li>
+                <div class="card border border-0">
+                    <ul class="list-group list-group-flush border border-0">
+                         <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Year Released: </div>
+                            <div class="col-8">Year</div>
+                        </li>
+                        <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Director: </div>
+                            <div class="col-8">Director(s)</div>
+                        </li>
+                         <li class="list-group-item row d-flex border border-0 pl-0">
+                            <div class="col-4" style="color:orange; font-size: 18px;">Cast: </div>
+                            <div class="col-8">Dee Wallace, Henry Thomas, Peter Coyote, Drew Barrymore, Robert MacNaughton</div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
             </div>
-        </div>
-        <div class = "container">
+
+        <div class="different-lines">
             <div class = "new-lines">
 
             </div>
@@ -135,11 +137,7 @@
         <div id = "container3">
             <div class = "new-lines">
 
-
-
-
-
-                <div id = "your_review">
+                <div class="pt-3 pl-5">
                     <h3>Add Review </h3>
 
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
