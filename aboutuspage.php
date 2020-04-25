@@ -12,9 +12,9 @@
 <div class="wrapper">
     <header>
         <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50px">
-        <a href="mainpage.html">Log Out</a>
-        <a href="myaccountpage.html">My Account</a>
-        <a href="homepage.html">Home</a>
+        <a href="mainpage.php">Log Out</a>
+        <a href="myaccountpage.php">My Account</a>
+        <a href="homepage.php">Home</a>
     </header>
 
 </div>

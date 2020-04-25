@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music </title>
+    <title>Restaurant_Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
 
@@ -13,18 +13,18 @@
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
     <div class="d-flex justify-content-end">
-        <a class="pr-3"href="mainpage.html">Log Out</a>
-        <a class="pr-3" href="aboutuspage.html">About Us</a>
-        <a class="pr-3" href="myaccountpage.html">My Account</a>
-        <a href="homepage.html">Home</a>
-        <input id="search_input" type="text" name="first_name" placeholder="Search Music..."/>
+        <a class="pr-3"href="mainpage.php">Log Out</a>
+        <a class="pr-3" href="aboutuspage.php">About Us</a>
+        <a class="pr-3" href="myaccountpage.php">My Account</a>
+        <a href="homepage.php">Home</a>
+        <input id="search_input" type="text" name="first_name" placeholder="Search Restaurants..."/>
     </div>
 
 </nav>
 
     <div class="title">
-        <h1>Music Reviews</h1>
-        <img id = "title_image" src = "Images/music-note.png" alt="Logo" height = "90em">
+        <h1>Restaurant Reviews</h1>
+        <img id = "title_image" src = "Images/food.png" alt="Logo" height = "90em">
     </div>
 
 
@@ -32,8 +32,8 @@
     <article>
         <div class="main-contents">
             <div class="clearfix">
-                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
-                <p id = "movie_title">Album Name Here</p>
+                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/restaurant_image.jpg" alt="Italian Trulli">
+                <p id = "movie_title">Restaurant Name Here</p>
                 <table>
                     <tr>
                         <th>
@@ -51,22 +51,22 @@
 
                 <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
-                <p>This part will contain a description of the album. It will not be more than 4 to 5 sentences and will give the user a small overview of the artist/band, their music genres, etc
+                <p>This part will contain a description of the restaurant. It will not be more than 4 to 5 sentences and will give the user a small overview of the location, the atmosphere of the restaurant and the name of the chef(s) if provided
                 </p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Year Created: </div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Year Established: </div>
                             <div class="col-8">Year</div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Artist: </div>
-                            <div class="col-8">Artist(s)</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Location: </div>
+                            <div class="col-8">Location</div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Songs: </div>
-                            <div class="col-8">List of songs</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Cusine Type: </div>
+                            <div class="col-8">Type of Cusine</div>
                         </li>
 
                     </ul>
@@ -92,10 +92,10 @@
                 </tr>
 
                 <tr>
-                    <td> LA Times: Phenomenal album..... </td>
+                    <td> LA Times: Great food, better atmosphere </td>
                 </tr>
                 <tr>
-                    <td> New York Times: The Weeknd is demonstrating why he is the next big thing....</td>
+                    <td> New York Times: Something for everyone </td>
                 </tr>
 
 
@@ -108,12 +108,12 @@
                 </tr>
 
                 <tr>
-                    <td> User 1: Cannot stop listening to Starboy...so goood ...</td>
+                    <td> User 1: Not worth the hype</td>
                 </tr>
 
 
                 <tr>
-                    <td>User 2: Not Drake....</td>
+                    <td>User 2: Excellent! Went here for my anniversary...</td>
                 </tr>
             </table>
 
@@ -153,6 +153,5 @@
 
 
 </div>
-
     </body>
 </html>

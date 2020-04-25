@@ -6,6 +6,7 @@
     <title>Movie_Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script src="./JS/getAPI.js"></script>
 
 </head>
 <body>
@@ -16,11 +17,19 @@
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
     <div class="d-flex justify-content-end">
-        <a class="pr-3"href="mainpage.html">Log Out</a>
-        <a class="pr-3" href="aboutuspage.html">About Us</a>
-        <a class="pr-3" href="myaccountpage.html">My Account</a>
+        <a class="pr-3"href="mainpage.php">Log Out</a>
+        <a class="pr-3" href="aboutuspage.php">About Us</a>
+        <a class="pr-3" href="myaccountpage.php">My Account</a>
         <a href="homepage.html">Home</a>
-        <input id="search_input" type="text" name="first_name" placeholder="Search Movies..."/>
+        <form method="get" action="moviepage.php">
+            <?php
+                echo "<script type='text/javascript'>getList();</script>";
+            ?>
+            <select name="search_movies" id="search_movies">
+                <option value='0'>Select Movie</option>
+            </select>
+            <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
+        </form>
     </div>
 
 </nav>
@@ -34,9 +43,23 @@
 
     <article>
         <div class="main-contents">
+            <?php
+            $link = "";
+            $id = 419704;
+            if (isset($_SERVER)){
+                $link = $_SERVER['REQUEST_URI'];
+                $seperate_link = explode("search_movies=",$link);
+                $index = 1;
+                if (!empty($seperate_link[$index])){
+                    $get_id = explode("&submit=",$seperate_link[$index]);
+                    $id = $get_id[0];
+                }
+            }
+            echo "<script type='text/javascript'>runSearch(".$id.");</script>";
+            ?>
             <div class="clearfix">
-                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/ET-Movie-Poster.jpg" alt="Italian Trulli">
-                <p id = "movie_title">Movie Name Here</p>
+                <img id = "movie_poster" class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="" alt="Italian Trulli">
+                <p id = "movie_title"></p>
                 <table>
                     <tr>
                         <th>
@@ -46,30 +69,29 @@
                             <h3 id ="scores">Critics Score</h3>
                         </th>
                     </tr>
-                    <tr>
-                        <th>Score</th>
-                        <th>Score</th>
+                    <tr style ="font-size: 16px;">
+                        <th id="audience_score">Score</th>
+                        <th id = "critic_score"></th>
                     </tr>
                 </table>
 
                 <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
-                <p>This part will contain a description of the moive. It will not be more than 4 to 5 sentences and will give the user a small overview of the movie, as well as the movie genre, ie Comedy, Horror, Romance, Action, ect.
-                </p>
+                <p id="overview"></p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Year Released: </div>
-                            <div class="col-8">Year</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Date Released: </div>
+                            <div id="date_released" class="col-8"></div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Director: </div>
-                            <div class="col-8">Director(s)</div>
+                            <div id = "director" class="col-8">Director(s)</div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Cast: </div>
-                            <div class="col-8">Dee Wallace, Henry Thomas, Peter Coyote, Drew Barrymore, Robert MacNaughton</div>
+                            <div id="cast" class="col-8"></div>
                         </li>
 
                     </ul>

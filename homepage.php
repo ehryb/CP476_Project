@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Home Page</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -18,9 +18,9 @@
 <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
     <div class="d-flex justify-content-end">
-        <a class="pr-3" href="mainpage.html">Log Out</a>
-        <a class="pr-3" href="aboutuspage.html">About Us</a>
-        <a href="myaccountpage.html">My Account</a>
+        <a class="pr-3" href="mainpage.php">Log Out</a>
+        <a class="pr-3" href="aboutuspage.php">About Us</a>
+        <a href="myaccountpage.php">My Account</a>
     </div>
 
 </nav>
@@ -35,15 +35,15 @@
 <div id ="mainBars" class="card" style="background-color: transparent;">
     <ul class="list-group list-group-flush">
         <li class="list-group-item row d-flex" style="background-color: transparent;">
-            <a href = "moviepage.html">Movies</a></li>
+            <a href = "moviepage.php">Movies</a></li>
         <li class="list-group-item row d-flex" style="background-color: transparent;">
-            <a href = "musicpage.html">Music</a></li>
+            <a href = "musicpage.php">Music</a></li>
         <li class="list-group-item row d-flex" style="background-color: transparent;">
-            <a href = "artpage.html">Art </a></li>
+            <a href = "artpage.php">Art </a></li>
         <li class="list-group-item row d-flex" style="background-color: transparent;">
-            <a href = "restaurantpage.html">Restaurants</a></li>
+            <a href = "restaurantpage.php">Restaurants</a></li>
         <li class="list-group-item row d-flex" style="background-color: transparent;">
-            <a href = "techpage.html">Tech</a></li>
+            <a href = "techpage.php">Tech</a></li>
     </ul>
 </div>
 

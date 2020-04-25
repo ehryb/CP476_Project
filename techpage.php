@@ -14,10 +14,10 @@
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
     <div class="d-flex justify-content-end">
-        <a class="pr-3"href="mainpage.html">Log Out</a>
-        <a class="pr-3" href="aboutuspage.html">About Us</a>
-        <a class="pr-3" href="myaccountpage.html">My Account</a>
-        <a href="homepage.html">Home</a>
+        <a class="pr-3"href="mainpage.php">Log Out</a>
+        <a class="pr-3" href="aboutuspage.php">About Us</a>
+        <a class="pr-3" href="aboutuspage.php">My Account</a>
+        <a href="homepage.php">Home</a>
         <input id="search_input" type="text" name="first_name" placeholder="Search Tech..."/>
     </div>
 
