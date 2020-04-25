@@ -1,3 +1,23 @@
+
+var userData;
+var stringVal;
+$(function(){
+        $.get("getData.php")
+          .done(function(data) {
+                userData  = jQuery.parseJSON(data);
+                stringVal = data;
+
+          })
+          .fail(function (jqXHR) {
+              alert("Error: " + jqXHR.status);
+          })
+          .always(function () {
+              console.log("Request finished");
+          });
+});
+
+
+
 function add_listener(){
     var submitThis = document.querySelector("#submit-this");
     var changeThis = document.querySelector("#change-this");
@@ -87,6 +107,7 @@ function final_check(){
         submitOk = 'false';
     }
     else{
+
         if (/^(?=.*[a-zA-Z0-9]).{6,20}$/.test(password.value) == false){
             password.style.backgroundColor = "pink";
             password.style.borderColor = "red";
@@ -117,10 +138,54 @@ function final_check(){
         submitOk = 'false';
     }
 
+    email_verify = 'true';
+    username_verify = 'true';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     if (submitOk == 'false'){
         event.preventDefault();
         return;
+    }
+    else{
+        for (i=0; i< userData.length; i++){
+            if (userData[i]["UserName"] === uname.value){
+                    username_verify = 'false'
+                    uname.style.backgroundColor = "pink";
+                    uname.style.borderColor = "red";
+                    uname.value = "";
+                    uname.placeholder = "Uname already exists";
+                    submitOk = 'false';
+
+
+                }
+                if (userData[i]["Email"] === email.value){
+                    email.style.backgroundColor = "pink";
+                    email.style.borderColor = "red";
+                    email.value = "";
+                    email.placeholder = "Email already exists";
+                    submitOk = 'false';
+
+
+                }
+            }
+        if (submitOk == 'false'){
+            event.preventDefault();
+            return;
+        }
+
+
     }
 
 
@@ -128,6 +193,9 @@ function final_check(){
 
 
 }
+
+
+
 
 function edit_AccountCheck(){
     var submitOk = 'true';

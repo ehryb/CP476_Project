@@ -4,8 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login_Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript" src="JS/loginChecker.js"></script>
+
+
+
 </head>
 <body>
 
@@ -23,18 +32,22 @@
     <div id = "loginArea">
         <h3> ReviewMaster Login </h3>
 
+        <form action="homepage.html" method="post" id ="submit-this" action = "#">
+
 
         <h4>User Name: </h4>
         <input id= "username" type ="text" name="username">
 
         <h4>Password: </h4>
-        <input id= "password" type ="text" name="password">
+        <input id= "password" type ="password" name="password">
 
         <h4></h4>
 
-        <button type="submit" id = "loginButton" value="Submit", onclick = "window.location.href='homepage.html'">
+        <button type="submit" id = "loginButton" value="Submit", onclick = "final_login()">
             Log In!
         </button>
+
+        </form>
 
     </div>
 
