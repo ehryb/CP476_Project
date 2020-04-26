@@ -40,7 +40,7 @@ session_start();
     <div id = "loginArea">
         <h3> ReviewMaster Login </h3>
 
-        <form action="homepage.php" method="post" id ="submit-this" action = "#">
+        <form action="startSession?user="<?php echo $$_POST['username']  ?> method="post" id ="submit-this" action = "#">
 
 
         <h4>User Name: </h4>
