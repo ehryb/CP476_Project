@@ -59,7 +59,7 @@
             ?>
             <div class="clearfix">
                 <img id = "movie_poster" class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="" alt="Italian Trulli">
-                <p id = "movie_title"></p>
+                <p id = "page_title"></p>
                 <table>
                     <tr>
                         <th>
