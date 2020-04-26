@@ -22,7 +22,7 @@
     <nav class="navbar navbar-dark bg-dark">
         <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
         <div class="d-flex justify-content-end">
-            <a class="color: orange" href="signuppage.html">Sign Up</a>
+            <a style="color: orange" href="signuppage.php">Sign Up</a>
         </div>
 
     </nav>
@@ -32,7 +32,7 @@
     <div id = "loginArea">
         <h3> ReviewMaster Login </h3>
 
-        <form action="homepage.html" method="post" id ="submit-this" action = "#">
+        <form action="homepage.php" method="post" id ="submit-this" action = "#">
 
 
         <h4>User Name: </h4>

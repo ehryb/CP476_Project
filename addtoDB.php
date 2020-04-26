@@ -53,7 +53,7 @@ mysqli_free_result($result);
     }
 */
 
-    header("Location: homepage.html");
+    header("Location: homepage.php");
     exit();
 
 

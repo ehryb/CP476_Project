@@ -143,17 +143,6 @@ function final_check(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     if (submitOk == 'false'){
         event.preventDefault();
         return;
