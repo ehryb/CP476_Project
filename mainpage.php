@@ -36,11 +36,11 @@ session_start();
     </nav>
 
     <div class="pt-5"></div>
-
+    <?php $user = $_POST['username']; ?>
     <div id = "loginArea">
         <h3> ReviewMaster Login </h3>
 
-        <form action="startSession?user="<?php echo $$_POST['username']  ?> method="post" id ="submit-this" action = "#">
+        <form action="startSession?user="<?php echo $user ?> method="post" id ="submit-this" action = "#">
 
 
         <h4>User Name: </h4>
