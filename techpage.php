@@ -15,6 +15,7 @@ session_start();
     <title>Tech_Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="displayLists.js"></script>
 
 </head>
 <body>
@@ -31,19 +32,6 @@ session_start();
 
             <select name="search_tech" id="search_tech">
                 <option value='0'>Select Tech Product</option>
-                <?php
-                    $query_list = "SELECT tech_id, tech_name from tech_info";
-
-
-                    $list_results = runQuery($conn, $query_list);
-
-                    while ($row_list = mysqli_fetch_assoc($list_results)) {
-                        $t_id = $row_list["tech_id"];
-                        $t_names = $row_list['tech_name'];
-                        echo "<option value = ".$t_id.">".$t_names."</option>";
-                    }
-
-                ?>
             </select>
             <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
         </form>

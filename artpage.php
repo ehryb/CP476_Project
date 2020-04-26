@@ -14,6 +14,7 @@ session_start();
     <title>Art </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="displayLists.js"></script>
 
 </head>
 <body>
@@ -32,19 +33,6 @@ session_start();
 
             <select name="search_art" id="search_art">
                 <option value='0'>Select Art Works</option>
-                <?php
-                    $query_list = "SELECT art_id, art_name from art_info";
-
-
-                    $list_results = runQuery($conn, $query_list);
-
-                    while ($row_list = mysqli_fetch_assoc($list_results)) {
-                        $a_id = $row_list["art_id"];
-                        $a_names = $row_list['art_name'];
-                        echo "<option value = ".$a_id.">".$a_names."</option>";
-                    }
-
-                ?>
             </select>
             <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
         </form>

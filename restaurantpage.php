@@ -15,6 +15,7 @@ session_start();
     <title>Restaurant_Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="displayLists.js"></script>
 
 </head>
 <body>
@@ -30,19 +31,6 @@ session_start();
 
             <select name="search_restaurants" id="search_restaurants">
                 <option value='0'>Select Restaurant</option>
-                <?php
-                    $query_list = "SELECT restaurant_id, restaurant_name from restaurant_info";
-
-
-                    $list_results = runQuery($conn, $query_list);
-
-                    while ($row_list = mysqli_fetch_assoc($list_results)) {
-                        $r_id = $row_list["restaurant_id"];
-                        $r_names = $row_list['restaurant_name'];
-                        echo "<option value = ".$r_id.">".$r_names."</option>";
-                    }
-
-                ?>
             </select>
             <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
         </form>
