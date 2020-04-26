@@ -14,6 +14,8 @@ session_start();
     <title>Music </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script src="./JS/getMusicData.js"></script>
+
 
 </head>
 <body>
@@ -25,7 +27,17 @@ session_start();
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a class="pr-3" href="myaccountpage.php">My Account</a>
         <a href="homepage.php">Home</a>
-        <input id="search_input" type="text" name="first_name" placeholder="Search Music..."/>
+        <form method="get" action="musicpage.php">
+            <?php
+                echo "<script type='text/javascript'>getList();</script>";
+            ?>
+            <select name="search_music" id="search_music">
+                <option value='0'>Select Music</option>
+            </select>
+            <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
+        </form>
+
+<!-- <input id="search_input" type="text" name="first_name" placeholder="Search Music..."/>-->
     </div>
 
 </nav>
@@ -39,8 +51,28 @@ session_start();
 
     <article>
         <div class="main-contents">
+            <?php
+
+
+                //if (!isset($_GET["search_music"])){
+                //    $id = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json";
+
+                //}
+                //else{
+                $search_music = $_GET["search_music"];
+                if (empty($_GET["search_music"])){
+                    $search_music = "method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json/0";
+                }
+
+                //if ($search_music == '0'){
+                //    $search_music = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json";
+                //}
+
+
+            echo "<script type='text/javascript'>runSearch('$search_music');</script>";
+            ?>
             <div class="clearfix">
-                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
+                <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
                 <p id = "movie_title">Album Name Here</p>
                 <table>
                     <tr>
@@ -48,33 +80,33 @@ session_start();
                             <h3 id="scores">Audience Score</h3>
                         </th>
                         <th>
-                            <h3 id ="scores">Critics Score</h3>
+                            <h3 id ="scores">Canada Rank</h3>
                         </th>
                     </tr>
                     <tr>
                         <th>Score</th>
-                        <th>Score</th>
+                        <th id = "lastFMrank">Score</th>
                     </tr>
                 </table>
 
                 <h4 class="pt-4">Overview</h4>
-                <div class="different-lines"></div>
-                <p>This part will contain a description of the album. It will not be more than 4 to 5 sentences and will give the user a small overview of the artist/band, their music genres, etc
+                <div  class="different-lines"></div>
+                <p id = "track_overview">This part will contain a description of the track. It will not be more than 4 to 5 sentences and will give the user a small overview of the artist/band, their music genres, etc
                 </p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Year Created: </div>
-                            <div class="col-8">Year</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Date Created: </div>
+                            <div id ="music_year" class="col-8">Year</div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Artist: </div>
-                            <div class="col-8">Artist(s)</div>
+                            <div id = "artist_names" class="col-8">Artist(s)</div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Songs: </div>
-                            <div class="col-8">List of songs</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Album: </div>
+                            <div id = "album_name" class="col-8" href="#">List of songs</div>
                         </li>
 
                     </ul>
