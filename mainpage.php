@@ -1,3 +1,11 @@
+<?php
+
+include 'functions.php';
+
+//your code for connecting to database, etc. goese here
+$conn = getDB();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

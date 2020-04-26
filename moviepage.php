@@ -1,3 +1,11 @@
+<?php
+
+include 'functions.php';
+
+//your code for connecting to database, etc. goese here
+$conn = getDB();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +24,15 @@
 <div class="container-fluid pt-3 h-100">
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
+    <?php
+        $query_all = "SELECT * FROM `restaurant_info` WHERE `restaurant_id` = ".$id;
+
+
+        $main_results = runQuery($conn, $query_all);
+        $row = mysqli_fetch_array($main_results);
+        $name = $row["restaurant_name"];
+        echo "<p>".$username."</p>"
+    ?>
     <div class="d-flex justify-content-end">
         <a class="pr-3"href="mainpage.php">Log Out</a>
         <a class="pr-3" href="aboutuspage.php">About Us</a>
@@ -59,7 +76,7 @@
             ?>
             <div class="clearfix">
                 <img id = "movie_poster" class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="" alt="Italian Trulli">
-                <p id = "movie_title"></p>
+                <p id = "page_title"></p>
                 <table>
                     <tr>
                         <th>

@@ -1,3 +1,12 @@
+<?php
+
+include 'functions.php';
+
+//your code for connecting to database, etc. goese here
+$conn = getDB();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +15,7 @@
     <title>Tech_Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="displayLists.js"></script>
 
 </head>
 <body>
@@ -18,7 +28,13 @@
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a class="pr-3" href="aboutuspage.php">My Account</a>
         <a href="homepage.php">Home</a>
-        <input id="search_input" type="text" name="first_name" placeholder="Search Tech..."/>
+        <form method="get" action="techpage.php">
+
+            <select name="search_tech" id="search_tech">
+                <option value='0'>Select Tech Product</option>
+            </select>
+            <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
+        </form>
     </div>
 
 </nav>
@@ -33,8 +49,34 @@
     <article>
         <div class="main-contents">
             <div class="clearfix">
-                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/tech_product.jpg" alt="Italian Trulli">
-                <p id = "movie_title">Product Name Here</p>
+                <?php
+                    $link = "";
+                    $id = 1;
+                    if (isset($_SERVER)){
+                    $link = $_SERVER['REQUEST_URI'];
+                    $seperate_link = explode("search_tech=",$link);
+                    $index = 1;
+                    if (!empty($seperate_link[$index])){
+                        $get_id = explode("&submit=",$seperate_link[$index]);
+                        $id = $get_id[0];
+                    }
+                }
+
+                    $query_all = "SELECT * FROM tech_info WHERE tech_id = ".$id;
+
+
+                    $main_results = runQuery($conn, $query_all);
+                    $row = mysqli_fetch_array($main_results);
+                    $name = $row["tech_name"];
+                    $company = $row["tech_company"];
+                    $product_type = $row["product_type"];
+                    $overview = $row["tech_overview"];
+                    $image = $row["tech_image"];
+                    $year_released = $row["tech_year"];
+
+            ?>
+                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src=<?php echo $image ?> alt="Italian Trulli">
+                <p id = "page_title"><?php echo $name ?></p>
                 <table>
                     <tr>
                         <th>
@@ -52,22 +94,21 @@
 
                 <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
-                <p>This part will contain a description of the tech product. It will not be more than 4 to 5 sentences and will give the user a small overview of the specs of the product, what it is designed for, etc.
-                </p>
+                <p><?php echo $overview ?></p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Year Developed: </div>
-                            <div class="col-8">Year</div>
+                            <div class="col-4" style="color:orange; font-size: 18px;">Year Released: </div>
+                            <div class="col-8"><?php echo $year_released ?></div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Distributer: </div>
-                            <div class="col-8">Company Name</div>
+                            <div class="col-8"><?php echo $company ?></div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Product Type: </div>
-                            <div class="col-8">Classification of Product</div>
+                            <div class="col-8"><?php echo $product_type ?></div>
                         </li>
 
                     </ul>

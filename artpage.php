@@ -1,3 +1,11 @@
+<?php
+
+include 'functions.php';
+
+//your code for connecting to database, etc. goese here
+$conn = getDB();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +14,7 @@
     <title>Art </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="project_css.css" rel="stylesheet">
+    <script type="text/javascript" src="displayLists.js"></script>
 
 </head>
 <body>
@@ -20,7 +29,13 @@
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a class="pr-3" href="myaccountpage.php">My Account</a>
         <a href="homepage.php">Home</a>
-        <input id="search_input" type="text" name="first_name" placeholder="Search Art..."/>
+        <form method="get" action="artpage.php">
+
+            <select name="search_art" id="search_art">
+                <option value='0'>Select Art Works</option>
+            </select>
+            <button class= "btn btn-secondary p-0 m-0" name = "submit" type="submit" id="buttons"> Search </button>
+        </form>
     </div>
 
 </nav>
@@ -35,8 +50,34 @@
     <article>
         <div class="main-contents">
             <div class="clearfix">
-                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src="images/Mona_Lisa.jpg" alt="Italian Trulli">
-                <p id = "movie_title">Art Work Name Here</p>
+                <?php
+                    $link = "";
+                    $id = 1;
+                    if (isset($_SERVER)){
+                    $link = $_SERVER['REQUEST_URI'];
+                    $seperate_link = explode("search_art=",$link);
+                    $index = 1;
+                    if (!empty($seperate_link[$index])){
+                        $get_id = explode("&submit=",$seperate_link[$index]);
+                        $id = $get_id[0];
+                    }
+                }
+
+                $query_all = "SELECT * FROM art_info where art_id = ".$id;
+
+
+                $main_results = runQuery($conn, $query_all);
+                $row = mysqli_fetch_array($main_results);
+                $name = $row["art_name"];
+                $year = $row["art_year"];
+                $artist = $row["art_artist"];
+                $overview = $row["art_overview"];
+                $image = $row["art_image"];
+                $medium = $row["art_medium"];
+
+                ?>
+                <img class="img-fluid float-left pull-left mr-5" style="max-width: 30em; max-height: 60em;" src=<?php echo $image ?> alt="Italian Trulli">
+                <p id = "page_title"><?php echo $name ?></p>
                 <table>
                     <tr>
                         <th>
@@ -54,28 +95,22 @@
 
                 <h4 class="pt-4">Overview</h4>
                 <div class="different-lines"></div>
-                <p>This part will contain a description of the art work. It will not be more than 4 to 5 sentences and will give the user a small overview of the history of the art, the type, the genre, etc.
-                </p>
+                <p><?php echo $overview ?></p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Year Created: </div>
-                            <div class="col-8">Year</div>
+                            <div class="col-8"><?php echo $year ?></div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Artist: </div>
-                            <div class="col-8">Artist(s)</div>
+                            <div class="col-8"><?php echo $artist ?></div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Medium: </div>
-                            <div class="col-8">Medium</div>
+                            <div class="col-8"><?php echo $medium ?></div>
                         </li>
-                         <li class="list-group-item row d-flex border border-0 pl-0">
-                            <div class="col-4" style="color:orange; font-size: 18px;">Subject: </div>
-                            <div class="col-8">Subject(s)</div>
-                        </li>
-
                     </ul>
                 </div>
             </div>

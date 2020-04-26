@@ -53,7 +53,7 @@
                 var overview = data["overview"];
                 var poster_path = data["poster_path"];
                 var vote_average = data["vote_average"];
-                document.getElementById('movie_title').innerHTML = title;
+                document.getElementById('page_title').innerHTML = title;
                 document.getElementById('overview').innerHTML = overview;
                 document.getElementById("movie_poster").src = "https://image.tmdb.org/t/p/w342"+poster_path+"";
                 document.getElementById('critic_score').innerHTML = vote_average;
