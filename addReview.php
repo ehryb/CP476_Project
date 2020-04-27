@@ -36,6 +36,18 @@ if (!empty($id) && !empty($score) && !empty($type)){
         header("Location: moviepage.php");
         exit();
     }
+
+    if ($type == "music"){
+
+        echo $id;
+        if (!empty($_GET['username'])){
+            $username = $_GET['username'];
+        }
+        $query_user = "INSERT INTO `music_reviews`(`music_id`, `Reviewer`, `Score`, `Review`, `Critic`) VALUES ('".$id."','".$username."', $score, '".$review."',false)";
+        header("Location: musicpage.php");
+        exit();
+    }
+
     if ($type == "restaurant"){
 
         $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
@@ -51,6 +63,7 @@ if (!empty($id) && !empty($score) && !empty($type)){
         $var = runQuery($conn, $query_user);
         header("Location: techpage.php");
         exit();
+
     }
 
     if ($type == "art"){
