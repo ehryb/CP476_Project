@@ -57,6 +57,9 @@ function final_login(){
         if (userData[i]["UserName"] === uname.value && userData[i]["Pword"] === password.value){
             submitOk = 'true'
             // go to the php to start the session
+            var url = "startSession.php?user=" + uname.value;
+
+            document.getElementById("submit-this").action = url;
         }
         else if (userData[i]["UserName"] === uname.value && userData[i]["Pword"] !== password ){
             password.value = "";
