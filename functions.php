@@ -43,4 +43,19 @@ function runQuery($db, $query) {
 }
 
 
+function should_round($decimal_num){
+    return (preg_match('/\.[0-9]{2,}[1-9][0-9]*$/', (string)$decimal_num) > 0);
+}
+
+function round_decimal($decimal_num){
+    if (should_round($decimal_num)){
+        return round($decimal_num,2);
+    }
+    else {
+        return $decimal_num;
+    }
+
+}
+
+
 ?>

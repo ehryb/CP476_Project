@@ -111,6 +111,7 @@ session_start();
                         }
                         else{
                             $final_score1 = (double)($final_score1 / $counter_all1);
+                            $final_score1 = round_decimal($final_score1);
                             echo "<th id='audience_score'>".$final_score1."</th>";
                         }
 
@@ -124,6 +125,7 @@ session_start();
                         }
                         else{
                             $final_score2 = (double)($final_score2 / $counter_all2);
+                            $final_score2 = round_decimal($final_score2);
                             echo "<th id='audience_score'>".$final_score2."</th>";
                         }
 
