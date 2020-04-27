@@ -84,7 +84,7 @@ function getTrackName($methodName){
 
                 $track = getTrackName($search_music);
                 //$track = urldecode($track);
-                echo $track;
+
 
 
 
