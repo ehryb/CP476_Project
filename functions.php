@@ -15,14 +15,11 @@ function getDB()
         exit;
     }
 
-    //else if ($mysqli_connect_error()){
-   //     $output = "<p>Unable to connet to database</p>". $error;
-    //    exit($output);
-   // }
-   // else if ($mysqli_connect_errno){
-   //     $output = "<p>Unable to connet to database</p>". $error;
-   //     exit($output);
-   // }
+    else if (mysqli_connect_error()){
+        $output = "<p>Unable to connet to database</p>". $error;
+        exit($output);
+    }
+
 
     return $db;
 }
