@@ -20,9 +20,13 @@ session_start();
 </head>
 <body>
 <div class="container-fluid pt-3 h-100">
+    <?php $username = $_SESSION['user'];  ?>
+
     <nav class="navbar navbar-dark bg-dark">
-    <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
-    <div class="d-flex justify-content-end">
+        <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
+
+        <div class="d-flex justify-content-end">
+        <a class="pr-3" style ="color: white;"><?php echo $username ?> </a>
         <a class="pr-3"href="endSession.php">Log Out</a>
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a class="pr-3" href="myaccountpage.php">My Account</a>
@@ -59,10 +63,11 @@ session_start();
 
                 //}
                 //else{
-                $search_music = $_GET["search_music"];
+
                 if (empty($_GET["search_music"])){
                     $search_music = "method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json/0";
                 }
+                $search_music = $_GET["search_music"];
 
                 //if ($search_music == '0'){
                 //    $search_music = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json";
@@ -72,8 +77,13 @@ session_start();
             echo "<script type='text/javascript'>runSearch('$search_music');</script>";
             ?>
             <div class="clearfix">
+<<<<<<< HEAD
                 <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="https://lastfm.freetls.fastly.net/i/u/300x300/8a54e33c0046d4752bcf56b37adaa97c.png" alt="Italian Trulli">
                 <p id = "movie_title">Can't Feel My Face</p>
+=======
+                <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
+                <p id = "page_title">Album Name Here</p>
+>>>>>>> origin/master
                 <table>
                     <tr>
                         <th>

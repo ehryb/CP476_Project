@@ -90,7 +90,7 @@ function getJSURL(stringValue,rank){
                 var summary = data.track.wiki.summary;
                 var overview = data.track.wiki.content;
 
-                document.getElementById('movie_title').innerHTML = track_name;
+                document.getElementById('page_title').innerHTML = track_name;
                 document.getElementById('lastFMrank').innerHTML = rank_value;
 
                 document.getElementById('track_overview').innerHTML = summary;

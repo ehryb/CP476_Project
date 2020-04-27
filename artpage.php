@@ -22,9 +22,13 @@ session_start();
 
 
 <div class="container-fluid pt-3 h-100">
+    <?php $username = $_SESSION['user'];  ?>
+
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
-    <div class="d-flex justify-content-end">
+
+        <div class="d-flex justify-content-end">
+        <a class="pr-3" style ="color: white;"><?php echo $username ?> </a>
         <a class="pr-3"href="endSession.php">Log Out</a>
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a class="pr-3" href="myaccountpage.php">My Account</a>
