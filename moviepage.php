@@ -214,12 +214,33 @@ session_start();
 
                 <div class="pt-3 pl-5">
                     <h3>Add Review </h3>
+                    <div>
+                        0<input type="range" id = "user_score" name="user_score" min="0" max="10" class="slider" onchange="updateTextInput(this.value)";>10
+                        <p id = "u_score"></p>
+                        <script>
+                            function updateTextInput(val) {
+                                document.getElementById("u_score").innerHTML = "Current Score: " + val;
+                            }
 
+                        </script>
+                    </div>
+                    <div class= "pt-1"></div>
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
                     <h3></h3>
-                    <button type="submit" id = "submitReview" value="reviewSubmit">
+                    <button type="submit" id = "submitReview" value="reviewSubmit" onclick = "clicked(event)">
+                        <script>
+                            function clicked(e)
+                            {
+                                if(!confirm('Are you sure you would like to submit this review?'))e.preventDefault();
+                                else{
+                                    //otherwise submit
+                                }
+
+                            }
+                        </script>
                         Submit Review!
                     </button>
+
 
                 </div>
 
