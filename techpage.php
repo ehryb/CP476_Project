@@ -177,8 +177,9 @@ session_start();
                     while (($row = mysqli_fetch_assoc($result_critic)) & ($counter < 4)) {
                         $review = $row['review_content'];
                         $score = $row['review_score'];
+                        $review_username = $row["username"];
                         echo "<tr>";
-                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "<strong> [" .$review_username. "]</strong></td>";
                         echo "</tr>";
                         $counter = $counter + 1;
                     }
@@ -205,8 +206,9 @@ session_start();
                     while (($row2 = mysqli_fetch_assoc($result_user)) & ($counter2 < 4)) {
                         $review = $row2['review_content'];
                         $score = $row2['review_score'];
+                        $review_username = $row2["username"];
                         echo "<tr>";
-                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "<strong> [" .$review_username. "]</strong></td>";
                         echo "</tr>";
                         $counter2 = $counter2 + 1;
                     }

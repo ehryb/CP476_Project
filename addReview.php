@@ -52,6 +52,14 @@ if (!empty($id) && !empty($score) && !empty($type)){
         exit();
     }
 
+    if ($type == "art"){
+
+        $query_user = "INSERT INTO `art_reviews`(`review_id`, `art_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
+        $var = runQuery($conn, $query_user);
+        header("Location: artpage.php");
+        exit();
+    }
+
 
 
 
