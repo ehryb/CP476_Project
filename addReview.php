@@ -33,17 +33,22 @@ if (!empty($id) && !empty($score) && !empty($type)){
     if ($type == "movie"){
 
         $query_user = "INSERT INTO `movie_reviews`(`review_id`, `movie_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
+        $var = runQuery($conn, $query_user);
+        header("Location: moviepage.php");
+        exit();
     }
     if ($type == "restaurant"){
 
-        $query_user = "INSERT INTO `restaurant_reviews`(`review_id`, `restaurant_id`, `username`, `review_score`, `review_content`, `critic`) VALUES ".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
+        $query_user = "INSERT INTO `restaurant_reviews`(`review_id`, `restaurant_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
+        $var = runQuery($conn, $query_user);
+        header("Location: restaurantpage.php");
+        exit();
     }
 
 
-    $var = runQuery($conn, $query_user);
+
 }
 
-header("Location: moviepage.php");
-exit();
+
 
 ?>

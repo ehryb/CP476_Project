@@ -90,8 +90,42 @@ session_start();
                         </th>
                     </tr>
                     <tr>
-                        <th>Score</th>
-                        <th>Score</th>
+                         <?php
+                        $query_user1 = "SELECT * FROM restaurant_reviews where restaurant_id = ".$id." and critic = false";
+                        $result_user1= runQuery($conn, $query_user1);
+                        $query_user2 = "SELECT * FROM restaurant_reviews where restaurant_id = ".$id." and critic = true";
+                        $result_user2= runQuery($conn, $query_user2);
+                        $counter_all1 = 0;
+                        $final_score1 = 0;
+                        $counter_all2 = 0;
+                        $final_score2 = 0;
+                        while ($row_score = mysqli_fetch_assoc($result_user1)) {
+                            $score = (int)($row_score['review_score']);
+                            $final_score1 = $final_score1 + $score;
+                            $counter_all1 = $counter_all1 + 1;
+                        }
+                        if ($counter_all1 == 0){
+                            echo "<th id='audience_score'>No current audience scores</th>";
+                        }
+                        else{
+                            $final_score1 = (double)($final_score1 / $counter_all1);
+                            echo "<th id='audience_score'>".$final_score1."</th>";
+                        }
+
+                        while ($row_score = mysqli_fetch_assoc($result_user2)) {
+                            $score = (int)($row_score['review_score']);
+                            $final_score2 = $final_score2 + $score;
+                            $counter_all2 = $counter_all2 + 1;
+                        }
+                        if ($counter_all2 == 0){
+                            echo "<th id='critic_score'>No current audience scores</th>";
+                        }
+                        else{
+                            $final_score2 = (double)($final_score2 / $counter_all2);
+                            echo "<th id='audience_score'>".$final_score2."</th>";
+                        }
+
+                        ?>
                     </tr>
                 </table>
 
@@ -130,19 +164,30 @@ session_start();
         <div class = "new-lines">
 
 
-        <div id = "ReviewBox">
+         <div id = "ReviewBox">
             <table id = "critic_table">
                 <tr>
                     <th><h4>Critic Reviews</h4></th>
                 </tr>
+                <?php
+                    $query_critic = "SELECT * FROM restaurant_reviews where restaurant_id = ".$id." and critic = true";
+                    $result_critic= runQuery($conn, $query_critic);
+                    $counter = 0;
+                    while (($row = mysqli_fetch_assoc($result_critic)) & ($counter < 4)) {
+                        $review = $row['review_content'];
+                        $score = $row['review_score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "</tr>";
+                        $counter = $counter + 1;
+                    }
+                    if ($counter == 0){
+                        echo "<tr>";
+                        echo "<td>No Critic Reviews at this time</td>";
+                        echo "</tr>";
+                    }
 
-                <tr>
-                    <td> LA Times: Great food, better atmosphere </td>
-                </tr>
-                <tr>
-                    <td> New York Times: Something for everyone </td>
-                </tr>
-
+                    ?>
 
             </table>
 
@@ -152,14 +197,25 @@ session_start();
                     <th><h4>Audience Review</h4></th>
                 </tr>
 
-                <tr>
-                    <td> User 1: Not worth the hype</td>
-                </tr>
+                 <?php
+                    $query_user = "SELECT * FROM restaurant_reviews where restaurant_id = ".$id." and critic = false";
+                    $result_user= runQuery($conn, $query_user);
+                    $counter2 = 0;
+                    while (($row2 = mysqli_fetch_assoc($result_user)) & ($counter2 < 4)) {
+                        $review = $row2['review_content'];
+                        $score = $row2['review_score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "</tr>";
+                        $counter2 = $counter2 + 1;
+                    }
+                    if ($counter2 == 0){
+                        echo "<tr>";
+                        echo "<td>No User Reviews at this time</td>";
+                        echo "</tr>";
+                    }
 
-
-                <tr>
-                    <td>User 2: Excellent! Went here for my anniversary...</td>
-                </tr>
+                    ?>
             </table>
 
 
@@ -173,21 +229,58 @@ session_start();
 
         <div id = "container3">
             <div class = "new-lines">
-
+                <form method="post" id ="add-this-review">
                 <div class="pt-3 pl-5">
                     <h3>Add Review </h3>
 
+                        0<input type="range" id = "user_score" name="user_score" min="0" max="10" class="slider" onchange="updateTextInput(this.value)";>10
+                        <p id = "u_score"></p>
+                        <script>
+                            function updateTextInput(val) {
+                                document.getElementById("u_score").innerHTML = "Current Score: " + val;
+                            }
+
+                        </script>
+                    </div>
+                    <div class= "pt-1"></div>
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
                     <h3></h3>
-                    <button type="submit" id = "submitReview" value="reviewSubmit">
+                    <button type="submit" id = "submitReview" name="submitReview" onclick = "clicked(event)">
+                        <script>
+                            function clicked(e)
+                            {
+                                if(!confirm('Are you sure you would like to submit this review?')){
+                                    e.preventDefault();
+                                }
+                                else{
+                                    var new_score = document.getElementById("user_score").value;
+                                    if (new_score == null){
+                                        e.preventDefault();
+                                    }
+                                    var new_review = document.getElementById("review_area").value;
+                                    if (new_review == null){
+                                        new_review = "";
+                                    }
+                                    else{
+                                        new_review = encodeURIComponent(new_review);
+                                    }
+                                    var movie_id = "" + <?php echo $id ?>;
+                                    var url = "addReview.php?type=restaurant&id=" + movie_id + "&review=" + new_review + "&score=" +new_score;
+
+                                    document.getElementById("add-this-review").action = url;
+
+
+                                }
+
+                            }
+                        </script>
                         Submit Review!
                     </button>
+                </form>
 
-                </div>
+
 
             </div>
-
-
 
         </div>
 
