@@ -19,7 +19,6 @@ $(function(){
 
 
 
-
 function add_listener(){
     var submitThis = document.querySelector("#submit-this");
     var changeThis = document.querySelector("#change-this");
@@ -37,11 +36,7 @@ function add_listener(){
 }
 
 
-
 function final_check(){
-
-
-
     var submitOk = 'true';
     var temp = document.querySelectorAll("input[type='text']");
     for (i = 0; i < temp.length; i++){
@@ -187,18 +182,6 @@ function final_check(){
 }
 
 
-
-/*
-    var sqlList = function () {
-        let url = 'getData.php';
-        fetch(url)
-        .then(result=>result.json())
-        .then((data)=>{
-            userData = data;
-        })
-        return userSQL;
-    }
-*/
 
 
 
