@@ -63,11 +63,14 @@ session_start();
 
                 //}
                 //else{
-
+                $search_music = "";
                 if (empty($_GET["search_music"])){
                     $search_music = "method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json/0";
                 }
-                $search_music = $_GET["search_music"];
+                else{
+                    $search_music = $_GET["search_music"];
+                }
+
 
                 //if ($search_music == '0'){
                 //    $search_music = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json";
@@ -78,7 +81,7 @@ session_start();
             ?>
             <div class="clearfix">
                 <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="https://lastfm.freetls.fastly.net/i/u/300x300/8a54e33c0046d4752bcf56b37adaa97c.png" alt="Italian Trulli">
-                <p id = "movie_title">Can't Feel My Face</p>
+                <p id = "page_title">Can't Feel My Face</p>
 
                 <table>
                     <tr>

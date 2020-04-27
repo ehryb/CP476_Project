@@ -82,7 +82,26 @@ session_start();
                         </th>
                     </tr>
                     <tr style ="font-size: 16px;">
-                        <th id="audience_score">Score</th>
+                         <?php
+                        $query_user1 = "SELECT * FROM movie_reviews where movie_id = ".$id." and critic = false";
+                        $result_user1= runQuery($conn, $query_user1);
+                        $counter_all = 0;
+                        $final_score = 0;
+                        while ($row_score = mysqli_fetch_assoc($result_user1)) {
+                            $score = (int)($row_score['review_score']);
+                            $final_score = $final_score + $score;
+                            $counter_all = $counter_all + 1;
+                        }
+                        if ($counter_all == 0){
+                            echo "<th id='audience_score'>No current audience scores</th>";
+                        }
+                        else{
+                            $final_score = (double)($final_score / $counter_all);
+                            echo "<th id='audience_score'>".$final_score."</th>";
+                        }
+
+                        ?>
+
                         <th id = "critic_score"></th>
                     </tr>
                 </table>
@@ -132,14 +151,25 @@ session_start();
                 <tr>
                     <th><h4>Critic Reviews</h4></th>
                 </tr>
+                <?php
+                    $query_critic = "SELECT * FROM movie_reviews where movie_id = ".$id." and critic = true";
+                    $result_critic= runQuery($conn, $query_critic);
+                    $counter = 0;
+                    while (($row = mysqli_fetch_assoc($result_critic)) & ($counter < 4)) {
+                        $review = $row['review_content'];
+                        $score = $row['review_score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "</tr>";
+                        $counter = $counter + 1;
+                    }
+                    if ($counter == 0){
+                        echo "<tr>";
+                        echo "<td>No Critic Reviews at this time</td>";
+                        echo "</tr>";
+                    }
 
-                <tr>
-                    <td> LA Times: Phenomenal Movie about how a being from..... </td>
-                </tr>
-                <tr>
-                    <td> New York Times: Steven Spielberg deliver his most....</td>
-                </tr>
-
+                    ?>
 
             </table>
 
@@ -149,14 +179,25 @@ session_start();
                     <th><h4>Audience Review</h4></th>
                 </tr>
 
-                <tr>
-                    <td> User 1: Great Movie. Really enjoyed it and found it .... </td>
-                </tr>
+                 <?php
+                    $query_user = "SELECT * FROM movie_reviews where movie_id = ".$id." and critic = false";
+                    $result_user= runQuery($conn, $query_user);
+                    $counter2 = 0;
+                    while (($row2 = mysqli_fetch_assoc($result_user)) & ($counter2 < 4)) {
+                        $review = $row2['review_content'];
+                        $score = $row2['review_score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "</td>";
+                        echo "</tr>";
+                        $counter2 = $counter2 + 1;
+                    }
+                    if ($counter2 == 0){
+                        echo "<tr>";
+                        echo "<td>No User Reviews at this time</td>";
+                        echo "</tr>";
+                    }
 
-
-                <tr>
-                    <td> User 2: Excellent piece of filmmaking. Thought it demonstrated .... </td>
-                </tr>
+                    ?>
             </table>
 
 
