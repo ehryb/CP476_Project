@@ -107,7 +107,27 @@ function getTrackName($methodName){
                         </th>
                     </tr>
                     <tr>
-                        <th>Score</th>
+                        <tr style ="font-size: 16px;">
+                         <?php
+                        $query_user1 = "SELECT * FROM music_reviews where music_id = '" .$track."' and Critic = 0";
+                        $result_user1= runQuery($conn, $query_user1);
+                        $counter_all = 0;
+                        $final_score = 0;
+                        while ($row_score = mysqli_fetch_assoc($result_user1)) {
+                            $score = (int)($row_score['Score']);
+                            $final_score = $final_score + $score;
+                            $counter_all = $counter_all + 1;
+                        }
+                        if ($counter_all == 0){
+                            echo "<th id='audience_score'>No current audience scores</th>";
+                        }
+                        else{
+                            $final_score = (double)($final_score / $counter_all);
+                            echo "<th id='audience_score'>".$final_score."</th>";
+                        }
+
+                        ?>
+
                         <th id = "lastFMrank">1</th>
                     </tr>
                 </table>
