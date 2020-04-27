@@ -77,13 +77,9 @@ session_start();
             echo "<script type='text/javascript'>runSearch('$search_music');</script>";
             ?>
             <div class="clearfix">
-<<<<<<< HEAD
                 <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="https://lastfm.freetls.fastly.net/i/u/300x300/8a54e33c0046d4752bcf56b37adaa97c.png" alt="Italian Trulli">
                 <p id = "movie_title">Can't Feel My Face</p>
-=======
-                <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
-                <p id = "page_title">Album Name Here</p>
->>>>>>> origin/master
+
                 <table>
                     <tr>
                         <th>
