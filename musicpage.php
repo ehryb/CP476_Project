@@ -72,8 +72,8 @@ session_start();
             echo "<script type='text/javascript'>runSearch('$search_music');</script>";
             ?>
             <div class="clearfix">
-                <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="images/Weeknd-Cover.png" alt="Italian Trulli">
-                <p id = "movie_title">Album Name Here</p>
+                <img id = "music_poster" class="img-fluid float-left pull-left mr-5" style="min-width: 20em; min-height: 40em; max-width: 30em; max-height: 60em;" src="https://lastfm.freetls.fastly.net/i/u/300x300/8a54e33c0046d4752bcf56b37adaa97c.png" alt="Italian Trulli">
+                <p id = "movie_title">Can't Feel My Face</p>
                 <table>
                     <tr>
                         <th>
@@ -85,28 +85,28 @@ session_start();
                     </tr>
                     <tr>
                         <th>Score</th>
-                        <th id = "lastFMrank">Score</th>
+                        <th id = "lastFMrank">1</th>
                     </tr>
                 </table>
 
                 <h4 class="pt-4">Overview</h4>
                 <div  class="different-lines"></div>
-                <p id = "track_overview">This part will contain a description of the track. It will not be more than 4 to 5 sentences and will give the user a small overview of the artist/band, their music genres, etc
+                <p id = "track_overview">"Can't Feel My Face" is a song released under the artist The Weeknd. The song is sung and performed by Canadian singer, Abel Tesfaye. The song was written and produced by Max Martin and Ali Payami with additional songwriting from Savan Kotecha, Abel Tesfaye (The Weeknd) and Peter Svensson. The song went number 1 in the charts of Australia (ARIA), Canada, Denmark, Iceland, New Zealand, South Africa and The US (Billboard Hot 100).
                 </p>
 
                 <div class="card border border-0">
                     <ul class="list-group list-group-flush border border-0">
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Date Created: </div>
-                            <div id ="music_year" class="col-8">Year</div>
+                            <div id ="music_year" class="col-8">N/A</div>
                         </li>
                         <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Artist: </div>
-                            <div id = "artist_names" class="col-8">Artist(s)</div>
+                            <div id = "artist_names" class="col-8">The Weeknd</div>
                         </li>
                          <li class="list-group-item row d-flex border border-0 pl-0">
                             <div class="col-4" style="color:orange; font-size: 18px;">Album: </div>
-                            <div id = "album_name" class="col-8" href="#">List of songs</div>
+                            <div id = "album_name" class="col-8" href="#">Beauty Behind the Madness</div>
                         </li>
 
                     </ul>
