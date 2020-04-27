@@ -19,7 +19,6 @@ $(function(){
 
 
 
-
 function add_listener(){
     var submitThis = document.querySelector("#submit-this");
     var changeThis = document.querySelector("#change-this");
@@ -37,11 +36,7 @@ function add_listener(){
 }
 
 
-
 function final_check(){
-
-
-
     var submitOk = 'true';
     var temp = document.querySelectorAll("input[type='text']");
     for (i = 0; i < temp.length; i++){
@@ -151,6 +146,7 @@ function final_check(){
     }
     else{
         for (i=0; i< userData.length; i++){
+
             if (userData[i]["UserName"] === uname.value){
                     username_verify = 'false'
                     uname.style.backgroundColor = "pink";
@@ -187,24 +183,23 @@ function final_check(){
 
 
 
-/*
-    var sqlList = function () {
-        let url = 'getData.php';
-        fetch(url)
-        .then(result=>result.json())
-        .then((data)=>{
-            userData = data;
-        })
-        return userSQL;
-    }
-*/
-
 
 
 
 
 
 function edit_AccountCheck(){
+
+    var temp = document.querySelectorAll("input");
+    for (i = 0; i < temp.length; i++){
+        if (temp[i].placeholder.length > 0 || temp[i].value.length > 0){
+            temp[i].placeholder = "";
+            temp[i].style.backgroundColor = null;
+            temp[i].style.borderColor = null;
+        }
+    }
+
+
     var submitOk = 'true';
 
     var newUser = document.getElementById("newusername");
@@ -274,43 +269,39 @@ function edit_AccountCheck(){
 
 
 
-/*
-    let url = 'getData.php';
-        fetch(url)
-        .then(result=>result.json())
-        .then((data)=>{
-            userData = data;
-    })
-*/
-
-
-/*
-    for (i=0; i< sqlList.length; i++){
-        if (sqlList[i]["UserName"] === newUser.value){
-            username_verify = 'false'
-            newUser.style.backgroundColor = "pink";
-            newUser.style.borderColor = "red";
-            newUser.value = "";
-            newUser.placeholder = "Uname already exists";
-            submitOk = 'false';
-
-
-        }
-        if (sqlList[i]["Email"] === email.value){
-            newEmail.style.backgroundColor = "pink";
-            newEmail.style.borderColor = "red";
-            newEmail.value = "";
-            newEmail.placeholder = "Email already exists";
-            submitOk = 'false';
-
-        }
-    }
-*/
-
-
     if (submitOk == 'false'){
         event.preventDefault();
         return;
     }
+
+    else{
+        for (i=0; i< userData.length; i++){
+            if (userData[i]["UserName"] === newUser.value && newUser.value != ""){
+                username_verify = 'false'
+                newUser.style.backgroundColor = "pink";
+                newUser.style.borderColor = "red";
+                newUser.value = "";
+                newUser.placeholder = "Uname already exists";
+                submitOk = 'false';
+            }
+
+            if (userData[i]["Email"] === newEmail.value && newEmail.value != ""){
+                newEmail.style.backgroundColor = "pink";
+                newEmail.style.borderColor = "red";
+                newEmail.value = "";
+                newEmail.placeholder = "Email already exists";
+                submitOk = 'false';
+            }
+
+
+        }
+        if (submitOk == 'false'){
+            event.preventDefault();
+            return;
+        }
+
+
+    }
+
 }
 
