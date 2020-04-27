@@ -53,7 +53,7 @@ mysqli_free_result($result);
     }
 */
 
-    header("Location: homepage.php");
+    header("Location: startSession.php?user=" .$uname);
     exit();
 
 
