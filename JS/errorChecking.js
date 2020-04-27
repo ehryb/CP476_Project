@@ -18,6 +18,8 @@ $(function(){
 
 
 
+
+
 function add_listener(){
     var submitThis = document.querySelector("#submit-this");
     var changeThis = document.querySelector("#change-this");
@@ -185,6 +187,22 @@ function final_check(){
 
 
 
+/*
+    var sqlList = function () {
+        let url = 'getData.php';
+        fetch(url)
+        .then(result=>result.json())
+        .then((data)=>{
+            userData = data;
+        })
+        return userSQL;
+    }
+*/
+
+
+
+
+
 
 function edit_AccountCheck(){
     var submitOk = 'true';
@@ -253,6 +271,41 @@ function edit_AccountCheck(){
             submitOk = 'false';
         }
     }
+
+
+
+/*
+    let url = 'getData.php';
+        fetch(url)
+        .then(result=>result.json())
+        .then((data)=>{
+            userData = data;
+    })
+*/
+
+
+/*
+    for (i=0; i< sqlList.length; i++){
+        if (sqlList[i]["UserName"] === newUser.value){
+            username_verify = 'false'
+            newUser.style.backgroundColor = "pink";
+            newUser.style.borderColor = "red";
+            newUser.value = "";
+            newUser.placeholder = "Uname already exists";
+            submitOk = 'false';
+
+
+        }
+        if (sqlList[i]["Email"] === email.value){
+            newEmail.style.backgroundColor = "pink";
+            newEmail.style.borderColor = "red";
+            newEmail.value = "";
+            newEmail.placeholder = "Email already exists";
+            submitOk = 'false';
+
+        }
+    }
+*/
 
 
     if (submitOk == 'false'){

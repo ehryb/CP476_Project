@@ -5,7 +5,10 @@ include 'functions.php';
 //your code for connecting to database, etc. goese here
 $conn = getDB();
 session_start();
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,20 @@ session_start();
 <body>
 
 <div class="container-fluid pt-3 h-100">
-    <?php $username = $_SESSION['user'];  ?>
+    <?php $username = $_SESSION['user'];
+    $query = "SELECT Pword, Email From userinfo WHERE UserName = '$username'";
+
+
+    $result = runQuery($conn, $query);
+    while ($row = mysqli_fetch_assoc($result)){
+        $password = $row["Pword"];
+        $email = $row["Email"];
+    }
+
+    mysqli_free_result($result);
+
+
+    ?>
 
 <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
@@ -45,13 +61,22 @@ session_start();
         <h3> My Account </h3>
         <img id = "accountImage" src = "Images/AccountImage.jpg" alt="Logo">
 
-        <form action="homepage.php" method="GET" id ="change-this" action = "#">
-            <h4>User Name: </h4> User Name HERE
+        <form action="updateDB.php" method="POST" id ="change-this" action = "#">
+            <h4>User Name: </h4>
+
+            <?php echo $username ?>
 
             <h4 class="pt-2">New User Name: </h4>
             <input id= "newusername" type ="text" name="newusername">
 
-            <h4 class="pt-2">Password: </h4> Old password Here (*******)
+            <h4 class="pt-2">Password: </h4>
+            <?php
+                $i = 0;
+                while ($i<strlen($password)){
+                    echo "*";
+                    $i = $i + 1;
+                }
+            ?>
 
             <h4 class="pt-2">New Password: </h4>
             <input id= "newpassword" type ="password" name="newpassword">
@@ -61,7 +86,7 @@ session_start();
 
 
             <h4 class="pt-2">Email: </h4>
-            user.name@gmail.com
+            <?php echo $email ?>
 
             <h4 class="pt-2">New Email: </h4>
             <input id= "newemail" type ="text" name="newemail">
