@@ -5,6 +5,16 @@ include 'functions.php';
 //your code for connecting to database, etc. goese here
 $conn = getDB();
 session_start();
+
+function getTrackName($methodName){
+    $x = explode("&track=",$methodName,3);
+    $x2 = explode("&",$x[1],3);
+    return $x2[0];
+
+
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,16 +70,20 @@ session_start();
 
                 //if (!isset($_GET["search_music"])){
                 //    $id = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json";
-
                 //}
+
                 //else{
                 $search_music = "";
                 if (empty($_GET["search_music"])){
                     $search_music = "method=track.getInfo&api_key=77780cb836c3d56b9f1f794ce2a4b512&artist=the+weeknd&track=can%27t+feel+my+face&format=json/0";
+
                 }
                 else{
                     $search_music = $_GET["search_music"];
                 }
+
+                $track = getTrackName($search_music);
+
 
 
                 //if ($search_music == '0'){
@@ -140,13 +154,28 @@ session_start();
                     <th><h4>Critic Reviews</h4></th>
                 </tr>
 
-                <tr>
-                    <td> LA Times: Phenomenal album..... </td>
-                </tr>
-                <tr>
-                    <td> New York Times: The Weeknd is demonstrating why he is the next big thing....</td>
-                </tr>
+                <?php
+                    $query_critic = "SELECT * FROM music_reviews where music_id = '" .$track."' and Critic = 1";
 
+                    $result_critic= runQuery($conn, $query_critic);
+                    $counter = 0;
+
+                    while (($row = mysqli_fetch_assoc($result_critic)) & ($counter < 4)) {
+                        $reviewer = $row['Reviewer'];
+                        $review = $row['Review'];
+                        $score = $row['Score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "<strong> [" .$reviewer. "]</strong>" ."</td>";
+                        echo "</tr>";
+                        $counter = $counter + 1;
+                    }
+                    if ($counter == 0){
+                        echo "<tr>";
+                        echo "<td>No Critic Reviews at this time</td>";
+                        echo "</tr>";
+                    }
+
+                ?>
 
             </table>
 
@@ -156,47 +185,72 @@ session_start();
                     <th><h4>Audience Review</h4></th>
                 </tr>
 
-                <tr>
-                    <td> User 1: Cannot stop listening to Starboy...so goood ...</td>
-                </tr>
+                <?php
+                    $query_audience = "SELECT * FROM music_reviews where music_id = '" .$track."' and Critic = 0";
+                    //echo $query_audience;
+                    $result_audience = runQuery($conn, $query_audience);
+                    $counter = 0;
+                    while (($row = mysqli_fetch_assoc($result_audience)) & ($counter < 4)) {
+                        $reviewer = $row['Reviewer'];
+                        $review = $row['Review'];
+                        $score = $row['Score'];
+                        echo "<tr>";
+                        echo "<td><strong>" .$score. "/10: </strong> " .$review. "<strong> [" .$reviewer. "]</strong>" ."</td>";
+                        echo "</tr>";
+                        $counter = $counter + 1;
+                    }
+                    if ($counter == 0){
+                        echo "<tr>";
+                        echo "<td>No Audience Reviews at this time</td>";
+                        echo "</tr>";
+                    }
 
-
-                <tr>
-                    <td>User 2: Not Drake....</td>
-                </tr>
+                ?>
             </table>
 
-
         </div>
-
         </div>
-
-
 
         </div>
 
         <div id = "container3">
             <div class = "new-lines">
-
                 <div class="pt-3 pl-5">
+
                     <h3>Add Review </h3>
+                    <div>
+                    0<input type="range" id = "user_score" name="user_score" min="0" max="10" class="slider" onchange="updateTextInput(this.value)";>10
+                    <p id = "u_score"></p>
+                        <script>
+                            function updateTextInput(val) {
+                                document.getElementById("u_score").innerHTML = "Current Score: " + val;
+                            }
+
+                        </script>
+                    </div>
+                    <div class= "pt-1"></div>
 
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
                     <h3></h3>
-                    <button type="submit" id = "submitReview" value="reviewSubmit">
+                    <button type="submit" id = "submitReview" value="reviewSubmit" onclick = "clicked(event)">
+                        <script>
+                            function clicked(e)
+                            {
+                                if(!confirm('Are you sure you would like to submit this review?'))e.preventDefault();
+                                else{
+                                    //otherwise submit
+                                }
+
+                            }
+                        </script>
                         Submit Review!
                     </button>
-
                 </div>
-
             </div>
-
-
-
         </div>
 
-
     </article>
+
 
 
 
