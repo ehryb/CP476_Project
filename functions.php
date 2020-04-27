@@ -30,7 +30,7 @@ function runQuery($db, $query) {
     $result = mysqli_query($db, $query);
     if (!$result){
         print "Error-query could not be executed";
-        print "<p>".$mysqli_error($db)."<\p>";
+        print "<p>".mysqli_error($db)."<\p>";
         exit;
     }
 
