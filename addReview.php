@@ -44,6 +44,14 @@ if (!empty($id) && !empty($score) && !empty($type)){
         header("Location: restaurantpage.php");
         exit();
     }
+    if ($type == "tech"){
+
+        $query_user = "INSERT INTO `tech_reviews`(`review_id`, `tech_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
+        $var = runQuery($conn, $query_user);
+        header("Location: techpage.php");
+        exit();
+    }
+
 
 
 
