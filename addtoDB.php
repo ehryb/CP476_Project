@@ -5,12 +5,15 @@ include 'functions.php';
 $connection = getDB();
 $data = array();
 
-$email = $_POST["email"];
-$uname = $_POST["username"];
+$email = mysqli_real_escape_string($connection, $_POST["email"]);
+$uname = mysqli_real_escape_string($connection, $_POST["username"]);
 
-$fname = $_POST["firstname"];
-$lname = $_POST["lastname"];
-$password = $_POST["signuppassword"];
+$fname = mysqli_real_escape_string($connection, $_POST["firstname"]);
+
+$lname = mysqli_real_escape_string($connection, $_POST["lastname"]);
+
+$password = mysqli_real_escape_string($connection, $_POST["signuppassword"]);
+
 
 
 $query = "INSERT INTO userinfo (UserName, FirstName, LastName, Email, Pword) VALUES ('$uname', '$fname', '$lname', '$email', '$password')";

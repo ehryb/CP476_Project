@@ -5,9 +5,10 @@ include 'functions.php';
 $connection = getDB();
 $data = array();
 
-$email = $_POST["newemail"];
-$uname = $_POST["newusername"];
-$password = $_POST["newpassword"];
+$email = mysqli_real_escape_string($connection, $_POST["newemail"]);
+$uname = mysqli_real_escape_string($connection, $_POST["newusername"]);
+$password = mysqli_real_escape_string($connection, $_POST["newpassword"]);
+
 $old_username = $_SESSION['user'];
 
 if (!empty($password)){
