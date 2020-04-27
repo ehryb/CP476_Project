@@ -30,7 +30,22 @@ if (!empty($id) && !empty($score) && !empty($type)){
     $review_id  = rand(1000, 1000000);
 
     if ($type == "movie"){
+
         $query_user = "INSERT INTO `movie_reviews`(`review_id`, `movie_id`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",".$score.",'".$review."',false)";
+
+    }
+    if ($type == "music"){
+        //$id = urlencode ( $id );
+
+
+        echo $id;
+        if (!empty($_GET['username'])){
+            $username = $_GET['username'];
+        }
+        $query_user = "INSERT INTO `music_reviews`(`music_id`, `Reviewer`, `Score`, `Review`, `Critic`) VALUES ('".$id."','".$username."', $score, '".$review."',false)";
+        echo $query_user;
+
+
     }
 
 

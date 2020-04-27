@@ -83,6 +83,8 @@ function getTrackName($methodName){
                 }
 
                 $track = getTrackName($search_music);
+                //$track = urldecode($track);
+                echo $track;
 
 
 
@@ -215,10 +217,9 @@ function getTrackName($methodName){
 
         <div id = "container3">
             <div class = "new-lines">
+                <form method="post" id ="add-this-review">
                 <div class="pt-3 pl-5">
-
                     <h3>Add Review </h3>
-                    <div>
                     0<input type="range" id = "user_score" name="user_score" min="0" max="10" class="slider" onchange="updateTextInput(this.value)";>10
                     <p id = "u_score"></p>
                         <script>
@@ -227,7 +228,7 @@ function getTrackName($methodName){
                             }
 
                         </script>
-                    </div>
+                </div>
                     <div class= "pt-1"></div>
 
                     <textarea id="review_area" rows="4" cols="60" placeholder="Add Your Review Here"></textarea>
@@ -236,16 +237,33 @@ function getTrackName($methodName){
                         <script>
                             function clicked(e)
                             {
-                                if(!confirm('Are you sure you would like to submit this review?'))e.preventDefault();
+                                if(!confirm('Are you sure you would like to submit this review?')){
+                                    e.preventDefault();
+                                }
                                 else{
-                                    //otherwise submit
+                                    var new_score = document.getElementById("user_score").value;
+                                    if (new_score == null){
+                                        e.preventDefault();
+                                    }
+                                    var new_review = document.getElementById("review_area").value;
+                                    if (new_review == null){
+                                        new_review = "";
+                                    }
+                                    else{
+                                        new_review = encodeURIComponent(new_review);
+                                    }
+                                    var music_id = "" +  '<?php echo urlencode($track) ?>';
+                                    var url = "addReview.php?type=music&id=" + music_id + "&review=" + new_review + "&score=" +new_score + "&username=" + "<?php echo $username?>";
+
+
+                                    document.getElementById("add-this-review").action = url;
                                 }
 
                             }
                         </script>
                         Submit Review!
                     </button>
-                </div>
+                </form>
             </div>
         </div>
 
