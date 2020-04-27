@@ -1,3 +1,11 @@
+<?php
+
+include 'functions.php';
+
+//your code for connecting to database, etc. goese here
+$conn = getDB();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +25,7 @@
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
 
         <div class="d-flex justify-content-end">
-        <a class="pr-3" style ="color: white;"><?php echo $username ?> </a>
+            <a class="pr-3" style ="color: white;"><?php echo $username ?> </a>
             <a href="endSession.php">Log Out</a>
             <a href="myaccountpage.php">My Account</a>
             <a href="homepage.php">Home</a>
