@@ -28,7 +28,7 @@ session_start();
 
     <div class="d-flex justify-content-end">
         <a class="pr-3" style ="color: white;"><?php echo $username ?> </a>
-        <a class="pr-3" href="mainpage.php">Log Out</a>
+        <a class="pr-3" href="endSession.php">Log Out</a>
         <a class="pr-3" href="aboutuspage.php">About Us</a>
         <a href="myaccountpage.php">My Account</a>
     </div>

@@ -22,7 +22,7 @@ session_start();
     <nav class="navbar navbar-dark bg-dark">
     <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
     <div class="d-flex justify-content-end">
-        <a class="pr-3" style="color: orange" href="mainpage.php">Log Out</a>
+        <a class="pr-3" style="color: orange" href="endSession.php">Log Out</a>
         <a class="pr-3" style="color: orange" href="aboutuspage.php">About Us</a>
         <a style="color: orange" href="homepage.php">Home</a>
     </div>
