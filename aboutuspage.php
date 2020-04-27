@@ -14,7 +14,7 @@
     <nav class="navbar navbar-dark bg-dark">
         <img id = "mainLogo" src = "Images/Logo.png" alt="Logo" height = "50em">
         <div class="d-flex justify-content-end">
-            <a href="mainpage.php">Log Out</a>
+            <a href="endSession.php">Log Out</a>
             <a href="myaccountpage.php">My Account</a>
             <a href="homepage.php">Home</a>
         </div>
