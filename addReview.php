@@ -44,6 +44,7 @@ if (!empty($id) && !empty($score) && !empty($type)){
             $username = $_GET['username'];
         }
         $query_user = "INSERT INTO `music_reviews`(`music_id`, `Reviewer`, `Score`, `Review`, `Critic`) VALUES ('".$id."','".$username."', $score, '".$review."',false)";
+        $var = runQuery($conn, $query_user);
         header("Location: musicpage.php");
         exit();
     }
