@@ -53,14 +53,14 @@ if (!empty($id) && !empty($score) && !empty($type)){
 
         $query_user = "INSERT INTO `restaurant_reviews`(`review_id`, `restaurant_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
         $var = runQuery($conn, $query_user);
-        header("Location: restaurantpage.php");
+        header("Location: restaurantpage.php?search_restaurants=".$id."&submit=");
         exit();
     }
     if ($type == "tech"){
 
         $query_user = "INSERT INTO `tech_reviews`(`review_id`, `tech_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
         $var = runQuery($conn, $query_user);
-        header("Location: techpage.php");
+        header("Location: techpage.php?search_tech=".$id."&submit=");
         exit();
 
     }
@@ -69,7 +69,7 @@ if (!empty($id) && !empty($score) && !empty($type)){
 
         $query_user = "INSERT INTO `art_reviews`(`review_id`, `art_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
         $var = runQuery($conn, $query_user);
-        header("Location: artpage.php");
+        header("Location: artpage.php?search_art=".$id."&submit=");
         exit();
     }
 
