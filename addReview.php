@@ -51,8 +51,6 @@ if (!empty($id) && !empty($score) && !empty($type)){
 
     if ($type == "restaurant"){
 
-        $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $firstname, $lastname, $email);
         $query_user = "INSERT INTO `restaurant_reviews`(`review_id`, `restaurant_id`, `username`, `review_score`, `review_content`, `critic`) VALUES (".$review_id.",".$id.",'".$username."',".$score.",'".$review."',false)";
         $var = runQuery($conn, $query_user);
         header("Location: restaurantpage.php");
