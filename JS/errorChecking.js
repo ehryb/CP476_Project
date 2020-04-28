@@ -200,12 +200,30 @@ function edit_AccountCheck(){
     }
 
 
+
+
+
     var submitOk = 'true';
+
+
+
 
     var newUser = document.getElementById("newusername");
     var newPass = document.getElementById("newpassword");
     var confirmPass = document.getElementById("confirmpassword");
     var newEmail = document.getElementById("newemail");
+
+
+    if (newPass.value.length == 0 && confirmPass.value.length == 0 && newEmail.value.length == 0 && newUser.value.length == 0){
+        newUser.style.backgroundColor = "pink";
+        newUser.style.borderColor = "red";
+        newUser.value = "";
+        newUser.placeholder = "Must enter input to change";
+        submitOk = 'false';
+
+    }
+
+
 
     // if newUser is not empty
     if (newUser.value.length > 0){
@@ -249,13 +267,20 @@ function edit_AccountCheck(){
 
     }
 
-    if (newPass.value.length > 0 && (confirmPass.value != newPass.value)){
+    if ((newPass.value.length == 0 && confirmPass.value.length >0)  || (confirmPass.value != newPass.value)){
+        newPass.style.backgroundColor = "pink";
+        newPass.style.borderColor = "red";
+        newPass.value = "";
+        newPass.placeholder = "Does not match confirm password";
+
         confirmPass.style.backgroundColor = "pink";
         confirmPass.style.borderColor = "red";
         confirmPass.value = "";
         confirmPass.placeholder = "Does not match password";
         submitOk = 'false';
     }
+
+
 
     if (newEmail.value.length > 0){
         if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail.value) == false){
@@ -266,6 +291,9 @@ function edit_AccountCheck(){
             submitOk = 'false';
         }
     }
+
+
+
 
 
 
