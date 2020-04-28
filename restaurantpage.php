@@ -109,12 +109,15 @@ session_start();
                         }
                         else{
                             $final_score1 = (double)($final_score1 / $counter_all1);
+                            $final_score1 = round_decimal($final_score1);
+
                             echo "<th id='audience_score'>".$final_score1."</th>";
                         }
 
                         while ($row_score = mysqli_fetch_assoc($result_user2)) {
                             $score = (int)($row_score['review_score']);
                             $final_score2 = $final_score2 + $score;
+
                             $counter_all2 = $counter_all2 + 1;
                         }
                         if ($counter_all2 == 0){
@@ -122,6 +125,7 @@ session_start();
                         }
                         else{
                             $final_score2 = (double)($final_score2 / $counter_all2);
+                            $final_score2 = round_decimal($final_score2);
                             echo "<th id='audience_score'>".$final_score2."</th>";
                         }
 
